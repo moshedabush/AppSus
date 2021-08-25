@@ -1,7 +1,8 @@
 'use strict';
 
 export const NoteService = {
-  query
+  query,
+  getTodos
 }
 
 
@@ -20,7 +21,7 @@ let gNotes = [
     id: 'n102',
     type: 'note-img',
     info: {
-      url: 'http://some-img/me',
+      url: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200,h_1495/https://www.knetizen.com/wp-content/uploads/2020/11/BTS-V-on-the-official-Instagram-account-3.jpg',
 
       title: 'Bobi and Me',
     },
@@ -45,8 +46,8 @@ function query() {
   return Promise.resolve(gNotes);
 }
 
-// function getTodos(note) {
-//   var todos = ''
-//   note.info.todos.map(todo => todos += `<li>${todo.txt}</li>`)
-//   return todos; 
-// }
+function getTodos(note) {
+  var todos = ''
+  note.info.todos.map(todo => todos += `<li>${todo.txt}</li>`)
+  return todos;
+}

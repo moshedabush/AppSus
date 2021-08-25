@@ -1,35 +1,48 @@
-// import { NoteService } from "../services/note.service";
-import { NotesTodos } from "./note-todos.jsx";
+import { NoteService } from "../services/note.service";
+import { NotesTodos } from './note-todos.jsx';
 
 export function NotePreview({ note, onSelectNote }) {
-
-  if(note.type === 'note-txt')  {
-  return  <div className="note-preview" onClick={() => { onSelectNote(note) }}>
-    <h2>{note.info.txt}</h2>
-    </div>
+  switch (note.type) {
+    case "note-txt":
+      return (
+        <div
+          className="note-preview"
+          onClick={() => {
+            onSelectNote(note);
+          }}
+        >
+          <h2>{note.info.txt}</h2>
+        </div>
+      );
+    case "note-img":
+      return (
+        <div
+          style={{ backgroundColor: 'lightblue' }}
+          className="note-preview"
+          onClick={() => {
+            onSelectNote(note);
+          }}
+        >
+          <h2>{note.info.title}</h2>
+          <div className="note-img">
+            <img src={note.info.url}/>
+          </div>
+        </div>
+      );
+    case "note-todos":
+      return (
+        <div
+          className="note-preview"
+          onClick={() => {
+            onSelectNote(note);
+          }}
+        >
+          <h2>{note.info.label}</h2>
+          <ul className="note-todos">
+            {/* <NotesTodos key={note.id} note={note} /> */}
+          </ul>
+        </div>
+      );
+      default: return (<h1>default</h1>)
   }
-
-
-
-  else if(note.type = 'note-img') { 
-    return <div   style={{backgroundColor: "lightblue"}} className="note-preview" onClick={() => { onSelectNote(note) }}>
-    <h2>{note.info.title}</h2>
-    <div className="note-img">
-        <img src={note.info.url} />
-    </div>
-</div>
-
-  }
-
-
-//   else if(note.type === 'note-todos') { 
-    
-//     return <div  className="note-preview" onClick={() => { onSelectNote(note) }}>
-//     <h2>{note.info.label}</h2>
-//     <ul className="note-todos">
-//       <NotesTodos note={note}/>  
-//     </ul>
-// </div>
-//   }
 }
-
