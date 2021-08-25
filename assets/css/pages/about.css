@@ -1,0 +1,22 @@
+.About{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(227, 204, 204);
+    color: #8143bb;
+    justify-content:space-evenly;
+    height: 90vh; 
+}
+
+.About p{
+    font-size: medium;
+    text-align: center;
+}
+
+.About a {
+    color: rgb(97, 142, 238);
+    text-decoration: none;
+    flex-direction: row;
+    font-size: large;
+    margin-inline-end: 10px;
+}

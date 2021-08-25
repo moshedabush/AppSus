@@ -22,7 +22,7 @@ html, body {
     width: 100vW;
     height: 100vH;
     overflow: hidden;
-    background-color: black;
+    /* background-color: black; */
   }
   
   .desk img{
