@@ -11,19 +11,30 @@ export const BookService = {
 const gBooks = books;
 
 
-function query(filterBy) {
+// function query(filterBy) {
 
+//     if (filterBy) {
+//         let { price, name } = filterBy
+//         if (price || +price === 0) {
+//             price = price
+//         }
+//         else price = 150
+//         name = name ? name : ''
+//         const bookToShow = gBooks.filter(book => book.title.includes(name) && book.listPrice.amount >= price)
+//         return Promise.resolve(bookToShow)
+//     }
+//     return Promise.resolve(gBooks)
+// }
+function query(filterBy) {
     if (filterBy) {
-        let { price, name } = filterBy
-        if (price || +price === 0) {
-            price = price
-        }
-        else price = 150
-        name = name ? name : ''
-        const bookToShow = gBooks.filter(book => book.title.includes(name) && book.listPrice.amount >= price)
-        return Promise.resolve(bookToShow)
+        let { title, minPrice, maxPrice } = filterBy
+        maxPrice = maxPrice ? maxPrice : Infinity
+        minPrice = minPrice ? minPrice : 0
+        const booksToShow = gBooks.filter(book => book.title.includes(title) &&
+            book.listPrice.amount >= minPrice && book.listPrice.amount <= maxPrice)
+        return Promise.resolve(booksToShow)
     }
-    return Promise.resolve(gBooks)
+    return Promise.resolve(gBooks);
 }
 
 function getBookById(id) {
