@@ -56,6 +56,50 @@
     margin-block-start: 14vh;
 }
 
+/* book-filter */
+
+.book-filter {
+    position: inherit;
+    top: 0;
+    width: 98vw;
+    padding-inline-start: 3vh;
+    padding-inline-end: 1vh;
+    display: flex;
+    text-align: center;
+}
+
+.book-filter .filter {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    width:33vw;
+    
+}
+
+.book-filter .filter input {
+    margin-top: 10px;
+    margin-inline-end: 5px;
+    border: 0;
+    height: 2.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    border: 2px solid #2e2e2e;
+    margin-block-end: 2vh;
+}
+
+.book-filter .search-filter {
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: 10px;
+}
+
+.book-filter img {
+    mix-blend-mode: multiply;
+    height: 2.5vh;
+}
+
+
 /* ANIMATIONS */
 
 @keyframes blink-2 {
