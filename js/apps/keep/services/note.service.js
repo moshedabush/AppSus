@@ -1,10 +1,13 @@
 'use strict';
 
+export const NoteService = {
+  query
+}
 
 
 const KEY = 'noteDB';
 
-const gNotes = [
+let gNotes = [
   {
     id: 'n101',
     type: 'note-txt',
@@ -22,7 +25,7 @@ const gNotes = [
       title: 'Bobi and Me',
     },
     style: {
-      backgroundColor: '#00d',
+      backgroundColor: '#1111',
     },
   },
   {
@@ -42,7 +45,8 @@ function query() {
   return Promise.resolve(gNotes);
 }
 
-function getTodos(note) {
-  var todos = ''
-  note.info.todos.map(todo => todos += `<li>${todo.txt}</li>`)
-}
+// function getTodos(note) {
+//   var todos = ''
+//   note.info.todos.map(todo => todos += `<li>${todo.txt}</li>`)
+//   return todos; 
+// }

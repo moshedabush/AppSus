@@ -1,4 +1,4 @@
-import { noteService } from '../services/note.service.js';
+import { NoteService } from '../services/note.service.js';
 import { NoteList } from '../cmps/note-list.jsx';
 
 export class noteApp extends React.Component {
@@ -10,20 +10,20 @@ export class noteApp extends React.Component {
 
   componentDidMount() {
     console.log('in did mount');
-    this.loadBooks();
+    this.loadNotes();
   }
 
-  loadBooks = () => {
+  loadNotes = () => {
     console.log('notes loaded!');
-    noteService.query(this.state.notes).then((not) => {
-      console.log(not);
-      this.setState({ not });
+    NoteService.query().then((notes) => {
+      // console.log(note);
+      this.setState({ notes });
     });
   };
 
 
-  onSelectNote = (selectedBook) => {
-    this.setState({ selectedBook });
+  onSelectNote = (selectedNote) => {
+    this.setState({ selectedNote });
 }
 
 
@@ -33,6 +33,7 @@ export class noteApp extends React.Component {
     return (
       <section>
         {!selectedNote && (
+  
           <React.Fragment>
             <NoteList notes={notes} onSelectNote={this.onSelectNote} /> 
           </React.Fragment>
