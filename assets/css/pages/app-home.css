@@ -21,11 +21,6 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  /* background-color: black; */
-}
-
-.desk img {
-  height: 62vh;
 }
 
 .desk img {

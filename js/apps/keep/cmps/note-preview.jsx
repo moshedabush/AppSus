@@ -38,9 +38,7 @@ export function NotePreview({ note, onSelectNote }) {
           }}
         >
           <h2>{note.info.label}</h2>
-          <ul className="note-todos">
-            {/* <NotesTodos key={note.id} note={note} /> */}
-          </ul>
+            <NotesTodos key={note.id} note={note} />
         </div>
       );
       default: return (<h1>default</h1>)

@@ -1,0 +1,141 @@
+.book-details {
+    width: 95vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin: 42px auto;
+    align-items: center;
+}
+
+.book-details img {
+    height: 191px;
+    margin-bottom: 14px;
+}
+
+.write-review-btn, .back {
+    height: 40px;
+    width: 80vw;
+    margin-bottom: 13px;
+    border-radius: 12px;
+    border: none;
+    font-size: 19px;
+    font-weight: 600;
+    background-color: #f443368a;
+    cursor: pointer;
+}
+
+.write-review-btn:hover {
+    background-color: #b31f148a;
+}
+
+.review{
+    padding-block-start: 1vh;
+    width: 90vw;
+}
+
+.card-review img {
+    height: 20px;
+    padding: 0;
+}
+
+.card-review {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 21px 21px;
+    background-color: #fff8f8ba;
+    border-radius: 10px;
+    box-shadow: -1px 0px 6px 0px black;
+    margin-bottom: 18px;
+}
+
+.review-info :first-child {
+    margin-right: 25px;
+}
+
+.review-info small {
+    color: gray;
+}
+
+/*AddReview*/
+
+.star-rating button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.on {
+    color: yellow;
+}
+
+.off {
+    color: #ccc;
+}
+
+.textarea {
+    height: 132px;
+    font-size: 20px;
+}
+
+.reviews-add-title {
+    height: 80px;
+    font-size: 30px;
+}
+
+.reviews-add-title span {
+    font-weight: 900;
+    font-size: 35px;
+    margin-left: 5px;
+}
+
+.add-review-container {
+    width: 1000px;
+    display: flex;
+    padding-bottom: 106px;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    background-color: aliceblue;
+    padding: 20px 30px;
+    height: 67vh;
+}
+
+.add-review-container>* {
+    margin-top: 10px;
+}
+
+.add-review-btn {
+    align-self: center;
+    width: 100%;
+    height: 5vh;
+    background-color: #015899;
+    border: 1px solid #015899;
+    font-size: 20px;
+}
+
+img.close-btn {
+    text-align: start;
+    position: relative;
+    left: 95%;
+    height: 15px;
+}
+
+.titel-currBook {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.details {
+    padding-block-start: 2vh;
+    gap: 15px;
+    display: flex;
+    font-size: 17px;
+    font-family: cursive;
+}
+
+.description{
+    padding-block-start: 3vh;
+    padding-block-end: 3vh;
+}

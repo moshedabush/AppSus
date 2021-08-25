@@ -1,14 +1,18 @@
 'use strict';
 
+import { storageService } from "./storage.service.js";
+
 export const NoteService = {
   query,
-  getTodos
-}
+
+};
 
 
+
+// _createNotes()
 const KEY = 'noteDB';
 
-let gNotes = [
+const gNotes = [
   {
     id: 'n101',
     type: 'note-txt',
@@ -46,8 +50,19 @@ function query() {
   return Promise.resolve(gNotes);
 }
 
-function getTodos(note) {
-  var todos = ''
-  note.info.todos.map(todo => todos += `<li>${todo.txt}</li>`)
-  return todos;
-}
+// function getTodos(note) {
+//   var todos = '';
+//   note.info.todos.map((todo) => (todos += `<li>${todo.txt}</li>`));
+//   return todos;
+// }
+
+
+// function _createNotes() {
+//   let loadedNotes = storageService.loadFromStorage(KEY)
+//   if (!loadedNotes || !loadedNotes.length) {
+//     loadedNotes = notes
+//     storageService.saveToStorage(KEY, notes)
+//   }
+//   gNotes = loadedNotes
+//   return
+// }

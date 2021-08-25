@@ -1,16 +1,15 @@
-.book-list{
+.book-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* background-color: rgba(180, 24, 45, 0.219); */
     margin-inline-start: 1vh;
     justify-content: center;
 }
 
-.book-preview{
+.book-preview {
     height: 60vh;
-    width: 31.5vw;
-    background-color: rgb(202, 177, 177);
+    width: 44vw;
+    background-color: rgba(202, 177, 198, 0.255);
     text-align: center;
     margin-inline-end: 1vh;
     margin-block-end: 1vh;
@@ -19,31 +18,29 @@
     transition: transform 0.5s, background-color 0.5s;
 }
 
-.book-preview a:link{
+.book-preview a:link {
     text-decoration: none;
     color: rgb(34, 32, 32);
 }
 
 .book-preview a:visited {
     color: rgb(55, 93, 50);
-  }
+}
 
-  .book-preview .book-img {
+.book-preview .book-img {
     position: relative;
-  }
-  
+}
 
-.book-img  img{
-    height:25vh;
+.book-img img {
+    height: 20vh;
 }
 
 .book-preview .sale-img {
     position: absolute;
     animation: blink-2 1.5s infinite both;
     text-align: center;
-    margin-inline-start: 13.5vh;
+    margin-inline-start: 11vh;
 }
-
 
 .book-details .book-img .sale-img {
     position: absolute;
@@ -55,7 +52,7 @@
 
 .book-preview .book-img .sale-img img {
     width: 10vw;
-    height: 10vh;
+    height: 5vh;
     margin-block-start: 14vh;
 }
 
@@ -70,5 +67,46 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media (min-width: 464px) {
+    .book-preview {
+        height: 60vh;
+        width: 28vw;
+    }
+
+    .book-img img {
+        height: 20vh;
+    }
+
+    .book-preview .sale-img {
+        margin-inline-start: 10vh;
+    }
+
+    .book-preview .book-img .sale-img img {
+        width: 8vw;
+        height: 5vh;
+        margin-block-start: 14vh;
+    }
+}
+
+@media (min-width: 640px) {
+    .book-preview {
+        height: 60vh;
+        width: 31.5vw;
+    }
+    .book-preview .book-img .sale-img img {
+        width: 10vw;
+        height: 8vh;
+    }
+    .book-img img {
+        height: 28vh;
+    }
+    .book-preview .sale-img {
+        margin-inline-start: 14vh;
+    }
+    .book-preview .book-img .sale-img img {
+        margin-block-start: 17vh;
     }
 }

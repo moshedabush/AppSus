@@ -2,3 +2,12 @@
   width: 200px;
   height: auto;
 }
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.note-preview {
+  width: 50vw;
+}
