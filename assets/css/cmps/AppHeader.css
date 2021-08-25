@@ -27,3 +27,7 @@ h1{
 .app-header nav {
     padding-right: 20px;
 }
+
+.app-header img{
+    height: 8vh;
+}

@@ -11,11 +11,13 @@ class _AppHeader extends React.Component {
 
     return (
       <section className="app-header">
-        <h1 onClick={() => this.props.history.goBack()}>AppSus</h1>
+        {/* <h1 onClick={() => this.props.history.goBack()}>AppSus</h1> */}
+        <img src="../assets/css/img/app-logo.png" />
         <nav>
+          <NavLink activeClassName="my-active" exact to="/">Home</NavLink>
           <NavLink to="/book" >Book</NavLink>
           <NavLink to="/note" >Note</NavLink>
-          <NavLink activeClassName="my-active" exact to="/">Home</NavLink>
+          <NavLink to="/about" >About</NavLink>
           {/* <NavLink to="/about" >About</NavLink> */}
         </nav>
       </section>

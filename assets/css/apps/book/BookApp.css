@@ -1,0 +1,74 @@
+.book-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background-color: rgba(180, 24, 45, 0.219); */
+    margin-inline-start: 1vh;
+    justify-content: center;
+}
+
+.book-preview{
+    height: 60vh;
+    width: 31.5vw;
+    background-color: rgb(202, 177, 177);
+    text-align: center;
+    margin-inline-end: 1vh;
+    margin-block-end: 1vh;
+    border-radius: 1rem;
+    border: 2px solid #2e2e2e;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.book-preview a:link{
+    text-decoration: none;
+    color: rgb(34, 32, 32);
+}
+
+.book-preview a:visited {
+    color: rgb(55, 93, 50);
+  }
+
+  .book-preview .book-img {
+    position: relative;
+  }
+  
+
+.book-img  img{
+    height:25vh;
+}
+
+.book-preview .sale-img {
+    position: absolute;
+    animation: blink-2 1.5s infinite both;
+    text-align: center;
+    margin-inline-start: 13.5vh;
+}
+
+
+.book-details .book-img .sale-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    animation: blink-2 1.5s infinite both;
+}
+
+.book-preview .book-img .sale-img img {
+    width: 10vw;
+    height: 10vh;
+    margin-block-start: 14vh;
+}
+
+/* ANIMATIONS */
+
+@keyframes blink-2 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
