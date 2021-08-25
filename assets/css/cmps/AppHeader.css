@@ -9,7 +9,7 @@
     height: 10vh;
 }
 .app-header  a {
-    color: rgb(231, 223, 223);
+    color: rgb(29, 27, 27);
     text-decoration: none;
     flex-direction: row;
     font-size: large;
@@ -21,14 +21,14 @@ h1{
 }
 
 .app-header :first-child {
-    padding-left: 30px;
+    margin-left: 15px;
 }
 
 .app-header nav {
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .app-header img{
-    height: 8vh;
+    height: 6vh;
     cursor: pointer;
 }

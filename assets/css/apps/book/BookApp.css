@@ -4,12 +4,13 @@
     flex-wrap: wrap;
     margin-inline-start: 1vh;
     justify-content: center;
+    background-color: #ebebeb;
 }
 
 .book-preview {
     height: 60vh;
     width: 44vw;
-    background-color: rgba(202, 177, 198, 0.255);
+    background-color: rgba(201, 199, 199, 0.384);
     text-align: center;
     margin-inline-end: 1vh;
     margin-block-end: 1vh;
@@ -59,6 +60,7 @@
 /* book-filter */
 
 .book-filter {
+    background-color: #ebebeb;
     position: inherit;
     top: 0;
     width: 98vw;
