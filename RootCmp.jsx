@@ -1,3 +1,4 @@
+
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 
@@ -12,16 +13,16 @@ export function App() {
 
     <Router>
       <header>
-        <AppHeader/>
+        <AppHeader />
       </header>
       <main>
-      <Switch>
+        <Switch>
 
-        {/* <Route path="/book/:bookId" component={BookDetails}/>
+          {/* <Route path="/book/:bookId" component={BookDetails}/>
         <Route path="/book" component={BookApp}/>
-        <Route path="/about" component={About}/>
-        <Route path="/" component={Home}/> */}
-      </Switch>
+        <Route path="/about" component={About}/> */}
+          <Route path="/" component={AppHome} />
+        </Switch>
       </main>
     </Router>
   );
