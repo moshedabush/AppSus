@@ -17,18 +17,12 @@
   font-size: large;
 }
 
-html,
-body {
+html,body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  /* background-color: black; */
 }
 
 .desk img {
   height: 62vh;
 }
 
-.desk img {
-  height: 62vh;
-}

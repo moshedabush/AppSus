@@ -8,7 +8,7 @@ import { BookApp } from './js/apps/book/pages/BookApp.jsx';
 import { noteApp } from './js/apps/keep/pages/note-app.jsx'
 import { About } from './js/pages/About.jsx';
 // import { Home } from './pages/Home.jsx';
-// import { BookDetails } from './pages/BookDetails.jsx';
+import { BookDetails } from './js/apps/book/pages/BookDetails.jsx';
 
 export function App() {
   return (
@@ -20,7 +20,7 @@ export function App() {
       <main>
         <Switch>
 
-          {/* <Route path="/book/:bookId" component={BookDetails}/> */}
+          <Route path="/book/:bookId" component={BookDetails}/>
         <Route path="/book" component={BookApp}/>
         <Route path="/note" component={noteApp}/>
         <Route path="/about" component={About}/>

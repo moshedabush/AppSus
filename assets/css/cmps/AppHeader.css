@@ -30,4 +30,5 @@ h1{
 
 .app-header img{
     height: 8vh;
+    cursor: pointer;
 }

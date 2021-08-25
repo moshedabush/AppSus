@@ -12,7 +12,7 @@ class _AppHeader extends React.Component {
     return (
       <section className="app-header">
         {/* <h1 onClick={() => this.props.history.goBack()}>AppSus</h1> */}
-        <img src="../assets/css/img/app-logo.png" />
+        <img onClick={() => this.props.history.goBack()} src="../assets/css/img/app-logo.png" />
         <nav>
           <NavLink activeClassName="my-active" exact to="/">Home</NavLink>
           <NavLink to="/book" >Book</NavLink>
