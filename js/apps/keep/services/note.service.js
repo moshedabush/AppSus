@@ -39,7 +39,7 @@ const gNotes = [
     info: {
       label: 'Get my stuff together',
       todos: [
-        { txt: 'Driving liscence', doneAt: null },
+        { txt: 'Driving liscence', doneAt: 1242211 },
         { txt: 'Coding power', doneAt: 187111111 },
       ],
     },

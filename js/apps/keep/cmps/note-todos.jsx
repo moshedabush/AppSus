@@ -1,11 +1,9 @@
-import {NotePreview} from './note-preview.jsx'
-
-export function NotesTodos({note}) { 
-
+export function NotesTodos({ note }) {
   return (
     <ul>
-      {note.info.todos.map(todo => <li>{todo.txt}</li>)}
+      {note.info.todos.map((todo) => (
+        <li key={todo.doneAt}>{todo.txt}</li>
+      ))}
     </ul>
-  )
+  );
 }
-

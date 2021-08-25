@@ -1,9 +1,10 @@
-*{
-    box-sizing: border-box;
-    overflow-x: hidden;
+* {
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
 }
 
-body{
-    margin: 0;
-    overflow-x: hidden;
+body {
+  background-color: rgb(236, 230, 236);
+  margin: 0;
+  /* overflow-x: hidden; */
 }
