@@ -1,0 +1,29 @@
+
+.app-header{
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    background-color: rgb(131, 45, 45);
+    color: rgb(231, 223, 223);
+    justify-content:space-between;
+    height: 10vh;
+}
+.app-header  a {
+    color: rgb(231, 223, 223);
+    text-decoration: none;
+    flex-direction: row;
+    font-size: large;
+    margin-inline-end: 10px;
+}
+
+h1{
+    cursor: pointer;
+}
+
+.app-header :first-child {
+    padding-left: 30px;
+}
+
+.app-header nav {
+    padding-right: 20px;
+}
