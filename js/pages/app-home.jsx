@@ -8,7 +8,8 @@ export function AppHome() {
         <section className="Home">
            <NavLink to="/"> <h1>AppSus</h1></NavLink>
             <nav>
-                {/* <NavLink to="/book" >Our Books</NavLink> */}
+                <NavLink to="/book" >Book</NavLink>
+                <NavLink to="/note" >Note</NavLink>
                 <NavLink activeClassName="my-active" exact to="/" >Home</NavLink>
                 <Desk/>
             </nav>

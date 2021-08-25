@@ -13,7 +13,8 @@ class _AppHeader extends React.Component {
       <section className="app-header">
         <h1 onClick={() => this.props.history.goBack()}>AppSus</h1>
         <nav>
-          {/* <NavLink to="/book" >Our Books</NavLink> */}
+          <NavLink to="/book" >Book</NavLink>
+          <NavLink to="/note" >Note</NavLink>
           <NavLink activeClassName="my-active" exact to="/">Home</NavLink>
           {/* <NavLink to="/about" >About</NavLink> */}
         </nav>
