@@ -50,19 +50,14 @@ function query() {
   return Promise.resolve(gNotes);
 }
 
-// function getTodos(note) {
-//   var todos = '';
-//   note.info.todos.map((todo) => (todos += `<li>${todo.txt}</li>`));
-//   return todos;
-// }
 
 
-// function _createNotes() {
-//   let loadedNotes = storageService.loadFromStorage(KEY)
-//   if (!loadedNotes || !loadedNotes.length) {
-//     loadedNotes = notes
-//     storageService.saveToStorage(KEY, notes)
-//   }
-//   gNotes = loadedNotes
-//   return
-// }
+function _createNotes() {
+  let loadedNotes = storageService.loadFromStorage(KEY)
+  if (!loadedNotes || !loadedNotes.length) {
+    loadedNotes = notes
+    storageService.saveToStorage(KEY, notes)
+  }
+  gNotes = loadedNotes
+  return
+}

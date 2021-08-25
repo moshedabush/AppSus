@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(227, 204, 204);
+  background-color: #ebebeb;
   color: rgb(20, 20, 20);
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   height: 90vh;
 }
 
@@ -24,5 +24,40 @@ body {
 }
 
 .desk img {
-  height: 62vh;
+  height: 50vh;
+  width: 99vw;
+}
+
+.home-logo {
+  height: 9vh;
+  margin-block-start: 3vh;
+  margin-block-end: 7vh;
+}
+
+.apps-icons img {
+  height: 8vh;
+}
+
+.apps-icons img:first-child {
+  margin-inline-start: 1.3vh;
+}
+
+.apps-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.note-icon {
+  margin-inline-end: 3vh;
+  margin-inline-start: 3vh;
+}
+
+.about-logo {
+  margin-block-start: 6vh;
+  padding-block-start: 1vh;
+  padding-inline-start: 0.5vh;
+}
+
+.about-logo img {
+  height: 5vh;
 }
