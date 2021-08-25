@@ -91,15 +91,16 @@
 }
 
 .add-review-container {
-    width: 1000px;
+    width: 100hw;
+    height: 90vh;
     display: flex;
     padding-bottom: 106px;
     flex-direction: column;
     margin: 0 auto;
     justify-content: center;
-    background-color: aliceblue;
+    background-color: rgba(54, 35, 63, 0.5);
     padding: 20px 30px;
-    height: 67vh;
+    text-align: center;
 }
 
 .add-review-container>* {
@@ -110,8 +111,8 @@
     align-self: center;
     width: 100%;
     height: 5vh;
-    background-color: #015899;
-    border: 1px solid #015899;
+    background-color: #4c7696;
+    border: 1px solid #4c7696;
     font-size: 20px;
 }
 
