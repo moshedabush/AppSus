@@ -22,7 +22,7 @@ export function About() {
   return (
     <section className="About">
       <strong>Welcome To our Apps platform</strong>
-      <img src="../assets/css/img/about-icon.png"/>
+      <img src="assets/css/img/about-icon.png"/>
       
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
           Ullam repellat corporis accusantium, magni quasi sequi tempore laudantium quia vel <br />
