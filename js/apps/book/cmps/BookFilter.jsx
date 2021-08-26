@@ -27,7 +27,7 @@ export class BookFilter extends React.Component {
                 <div className='filter'>
                     <label htmlFor='by-title'>
                         <div className='search-filter'>
-                            <img src='../assets/css/apps/book/img/search.png' />
+                            <img src='assets/css/apps/book/img/search.png' />
                         </div>
                         By title
                  </label>
@@ -38,7 +38,7 @@ export class BookFilter extends React.Component {
                 <div className='filter'>
                     <label htmlFor='min-price'>
                         <div className='search-filter'>
-                            <img src='../assets/css/apps/book/img/search.png' />
+                            <img src='assets/css/apps/book/img/search.png' />
                         </div>
                         Min Price
                  </label>
@@ -49,7 +49,7 @@ export class BookFilter extends React.Component {
                 <div className='filter'>
                     <label htmlFor='max-price'>
                         <div className='search-filter'>
-                            <img src='../assets/css/apps/book/img/search.png' />
+                            <img src='assets/css/apps/book/img/search.png' />
                         </div>
                         Max Price
                  </label>
