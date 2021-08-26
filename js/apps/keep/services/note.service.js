@@ -4,7 +4,8 @@ import { storageService } from "./storage.service.js";
 
 export const NoteService = {
   query,
-
+  deleteNote,
+  getNotes
 };
 
 
@@ -12,7 +13,7 @@ export const NoteService = {
 // _createNotes()
 const KEY = 'noteDB';
 
-const gNotes = [
+var gNotes = [
   {
     id: 'n101',
     type: 'note-txt',
@@ -50,6 +51,15 @@ function query() {
   return Promise.resolve(gNotes);
 }
 
+function getNotes() {
+  return gNotes
+}
+
+function deleteNote(noteId) {
+  const noteIdx = gNotes.findIndex(note => note.id === noteId)
+  gNotes.splice(noteIdx, 1);
+  return Promise.resolve();
+}
 
 
 function _createNotes() {

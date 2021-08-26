@@ -4,25 +4,90 @@
 }
 
 .note-list {
+  margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
 }
 .note-preview {
-  width: 50vw;
-  background-color: bisque;
-  text-align: center;
+  max-width: 50%;
+  padding: 21px 21px;
+  background-color: #fff8f8ba;
+  border-radius: 10px;
+  box-shadow: -1px 0px 6px 0px black;
+  margin-bottom: 18px;
+  flex-basis: 50%;
 }
 
 #mydiv {
   z-index: 9;
   background-color: #f1f1f1;
-  text-align: center;
   border: 1px solid #d3d3d3;
 }
 
 #mydivheader {
   cursor: move;
   z-index: 10;
+}
+
+#form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  width: 60vw;
+  border-radius: 30px;
+  border: 1px solid #dcdcdc;
+}
+.bar:hover {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+.bar:focus-within {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline: none;
+}
+.searchbar {
+  text-align: center;
+  height: 45px;
+  border-radius: 30px;
+  border: none;
+  width: 50vw;
+  font-size: 16px;
+  outline: none;
+}
+
+.bar img {
+  height: 20px;
+  position: relative;
+  margin: 4px;
+}
+
+.sumbit-btn {
+  background-color: #e6e3e3;
+  border: 1px solid #c8c8c8;
+  color: #707070;
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 4px;
+  outline: none;
+}
+.sumbit-btn:hover {
+  border: 1px solid #c8c8c8;
+  padding: 9px 19px;
+  color: #808080;
+}
+.sumbit-btn:focus {
+  border: 1px solid #4885ed;
+  padding: 9px 19px;
+}
+.close-btn img {
+  position: relative;
+  height: 9 5px;
 }

@@ -2,6 +2,7 @@ import { BookService } from "../services/book.service.jsx";
 import { StarRating } from "../cmps/StarsReview.jsx";
 import { eventBusService } from "../../../services/event-bus-service.js";
 import { utilService } from "../../../services/util.service.js";
+import { Loader } from "../../../cmps/loader.jsx";
 
 export class AddReview extends React.Component {
   state = {
@@ -54,7 +55,8 @@ export class AddReview extends React.Component {
 
   render() {
     const { book } = this.state;
-    if (!book) return <div>loading</div>;
+    if (!book) return <Loader/>
+    ;
     return (
       <form className="add-review-container" onSubmit={this.onSaveReview}>
         <div className="reviews-add_title">

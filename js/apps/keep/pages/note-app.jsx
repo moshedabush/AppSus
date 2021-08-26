@@ -1,5 +1,6 @@
 import { NoteService } from '../services/note.service.js';
 import { NoteList } from '../cmps/note-list.jsx';
+import { NoteAdd } from '../cmps/note-add.jsx';
 
 export class noteApp extends React.Component {
   state = {
@@ -22,28 +23,28 @@ export class noteApp extends React.Component {
   };
 
 
+  onRemoveNote = (noteId) => {
+    NoteService.deleteNote(noteId).then(this.loadNotes);
+
+
+
+    
+  }
+
   onSelectNote = (selectedNote) => {
     this.setState({ selectedNote });
 }
 
 
   render() {
-    const { notes, selectedNote } = this.state;
+    const { notes } = this.state;
     if (!notes) return <div>Loading...</div>;
     return (
       <section>
-        {!selectedNote && (
-  
           <React.Fragment>
-            <NoteList notes={notes} onSelectNote={this.onSelectNote} /> 
+            <NoteAdd notes={notes}/>
+            <NoteList notes={notes} onSelectNote={this.onSelectNote} onRemoveNote={this.onRemoveNote} /> 
           </React.Fragment>
-        )}
-        {selectedNote && (
-          <NoteDetails
-            note={selectedNote}
-            // onBack={() => this.onSelectNote(null)}
-          />
-        )}
       </section>
     );
   }
