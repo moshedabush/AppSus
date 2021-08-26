@@ -1,7 +1,8 @@
 "use strict";
 
 import { storageService } from "../../../services/storage.service";
-import { utilService } from "../../../services/util.service.js";
+// import { utilService } from "../../../services/util.service.js";
+import {emails} from "../services/data.service.js";
 
 export const EmailService = {
   getUser,
@@ -10,30 +11,7 @@ export const EmailService = {
 
 const loggedinUser = { email: "Kuki@appsus.com", fullname: "Kuki Appsus" };
 
-const gEmails = [
-  {
-    id: utilService.makeId(),
-    subject: "Miss you!",
-    body: "Would love to catch up sometimes",
-    isRead: false,
-    sentAt: Date.now(),
-    to: "Kuki@appsus.com",
-    isTrash: false,
-    isDraft: false,
-    isSent: false,
-  },
-  {
-    id: utilService.makeId(),
-    subject: "Miss you!",
-    body: utilService.makeLorem(20),
-    isRead: false,
-    sentAt: Date.now(),
-    to: "Kuki@appsus.com",
-    isTrash: false,
-    isDraft: false,
-    isSent: false,
-  },
-];
+const gEmails = emails;
 
 // const criteria = {
 //   // optinal status: 'inbox/sent/trash/draft',
