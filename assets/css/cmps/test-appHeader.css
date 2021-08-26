@@ -17,10 +17,11 @@ a {
 
 .header {
   background-color: #fff;
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.438);
   position: flex;
   width: 100%;
   z-index: 3;
+  margin-bottom: 3rem;
 }
 
 .header ul {
@@ -75,7 +76,7 @@ a {
   display: block;
   height: 2px;
   position: relative;
-  transition: background 0.2s ease-out;
+  transition: 0.2s ease-out;
   width: 18px;
 }
 
@@ -127,7 +128,14 @@ a {
 
 /* 48em = 768px */
 
-@media (min-width: 48em) {
+@media (max-width: 60em) {
+  .search {
+    width: 303px; /* Bar width+1px */
+    padding: 0 16px 0 0;
+  }
+}
+
+@media (min-width: 60em) {
   .header li {
     float: left;
   }
@@ -142,4 +150,96 @@ a {
   .header .menu-icon {
     display: none;
   }
+}
+
+/* Search line style */
+
+.button {
+  display: inline-block;
+  margin: 4px 2px;
+  line-height: 50px;
+  text-align: center;
+  color: rgb(56, 56, 56);
+  text-decoration: none;
+  cursor: pointer;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button:hover {
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  background-color: white;
+  color: rgb(105, 60, 179);
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  margin: 4px 18px;
+  height: 50px;
+  width: 50px;
+  vertical-align: bottom;
+}
+
+.mglass {
+  display: inline-block;
+  pointer-events: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+
+.searchbutton {
+  position: absolute;
+  font-size: 29px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.search:focus + .searchbutton {
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+}
+
+.search {
+  position: absolute;
+  left: 41px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
+  background-color: rgb(230, 230, 230);
+  outline: none;
+  border: none;
+  padding: 0;
+  width: 0;
+  height: 100%;
+  z-index: 10;
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+}
+
+.search:focus {
+  width: 303px; /* Bar width+1px */
+  padding: 0 16px 0 0;
+}
+
+.expandright {
+  left: auto;
+  right: 49px; /* Button width-1px */
+}
+
+.expandright:focus {
+  padding: 0 0 0 30px;
 }

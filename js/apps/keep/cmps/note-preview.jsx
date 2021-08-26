@@ -5,7 +5,7 @@ export function NotePreview({ note, onSelectNote }) {
   switch (note.type) {
     case "note-txt":
       return (
-        <div
+        <div id="mydivheader"
           className="note-preview"
           onClick={() => {
             onSelectNote(note);
@@ -16,22 +16,22 @@ export function NotePreview({ note, onSelectNote }) {
       );
     case "note-img":
       return (
-        <div
+        <div id="mydiv"
           style={{ backgroundColor: 'lightblue' }}
           className="note-preview"
-          onClick={() => {
-            onSelectNote(note);
-          }}
+          // onClick={() => {
+          //   onSelectNote(note);
+          // }}
         >
           <h2>{note.info.title}</h2>
-          <div className="note-img">
+          <div id="mydivheader"className="note-img">
             <img src={note.info.url}/>
           </div>
         </div>
       );
     case "note-todos":
       return (
-        <div
+        <div id="mydivheader"
           className="note-preview"
           onClick={() => {
             onSelectNote(note);
