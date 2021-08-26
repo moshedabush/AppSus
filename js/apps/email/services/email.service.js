@@ -1,39 +1,17 @@
 "use strict";
 
-import { storageService } from "../../keep/services/storage.service";
-import { utilService } from "../../../services/util.service.js";
+import { storageService } from "../../../services/storage.service";
+// import { utilService } from "../../../services/util.service.js";
+import {emails} from "../services/data.service.js";
 
-export const mailService = {
+export const EmailService = {
   getUser,
-  mailsToShow,
+  emailsToShow
 };
 
 const loggedinUser = { email: "Kuki@appsus.com", fullname: "Kuki Appsus" };
 
-const gMails = [
-  {
-    id: utilService.makeId(),
-    subject: "Miss you!",
-    body: "Would love to catch up sometimes",
-    isRead: false,
-    sentAt: Date.now(),
-    to: "Kuki@appsus.com",
-    isTrash: false,
-    isDraft: false,
-    isSent: false,
-  },
-  {
-    id: utilService.makeId(),
-    subject: "Miss you!",
-    body: utilService.makeLorem(20),
-    isRead: false,
-    sentAt: Date.now(),
-    to: "Kuki@appsus.com",
-    isTrash: false,
-    isDraft: false,
-    isSent: false,
-  },
-];
+const gEmails = emails;
 
 // const criteria = {
 //   // optinal status: 'inbox/sent/trash/draft',
@@ -48,27 +26,27 @@ function getUser() {
   return Promise.resolve(loggedinUser);
 }
 
-function mailsToShow(user, criteria) {
-  let mails = filterBy(user, criteria);
-  return Promise.resolve(mails);
+function emailsToShow(user, criteria) {
+  let emails = filterBy(user, criteria);
+  return Promise.resolve(emails);
 }
 
 function filterBy(user, criteria) {
-  let mails = gMails.filter((mail) => {
+  let emails = gEmails.filter((email) => {
     switch (criteria.status) {
       case "sent":
-        return mail.from === user.email;
+        return email.from === user.email;
       case "trash":
-        return mail.isTrash;
+        return email.isTrash;
       case "draft":
-        return mail.isDraft;
+        return email.isDraft;
       default:
         return true;
     }
   });
-  mails = mails.filter((mail) => {
-    return (criteria.isStared && mail.isStared) || (!criteria.isStared && mail);
+  emails = emails.filter((email) => {
+    return (criteria.isStared && email.isStared) || (!criteria.isStared && email);
   });
 
-  return mails;
+  return emails;
 }

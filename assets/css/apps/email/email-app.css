@@ -1,0 +1,47 @@
+.email-app-contain{
+    display: flex;
+}
+
+
+.email-navbar{
+    margin-block-start: 3vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffff;
+    z-index: 3;
+    width: 30vw;
+}
+
+.email-list{
+    background-color: rgb(245, 245, 245);
+    margin-block-start: 3vh;
+}
+
+
+.email-navbar img{
+    height: 3.5vh;
+    margin-inline-start: 1vh;
+    margin-block-end: 2vh;
+}
+.email-navbar a:hover{
+    background-color: rgb(244, 112, 112);
+}
+
+.add-email-btn{
+    align-self: center;
+}
+.email-navbar a.add-email-btn:hover{
+    background-color: unset;
+}
+
+.add-email-btn img{
+    margin-block-end: 3vh;
+    height: 5vh;
+    border-radius: 1rem;
+    border: 1px solid #cfcece;
+    box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
+}
+
+.email-preview{
+    margin-block-end: 1;
+}

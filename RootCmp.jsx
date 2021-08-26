@@ -9,7 +9,7 @@ import { noteApp } from "./js/apps/keep/pages/note-app.jsx";
 import { About } from "./js/pages/About.jsx";
 import { BookDetails } from "./js/apps/book/pages/BookDetails.jsx";
 import { AddReview } from "./js/apps/book/cmps/AddReview.jsx";
-import { MailApp } from "./js/apps/email/pages/email-app.jsx";
+import { EmailApp } from "./js/apps/email/pages/email-app.jsx";
 
 
 export function App() {
@@ -24,7 +24,7 @@ export function App() {
           <Route path="/book/:bookId" component={BookDetails} />
           <Route path="/book" component={BookApp} />
           <Route path="/note" component={noteApp} />
-          <Route path="/email" component={MailApp} />
+          <Route path="/email" component={EmailApp} />
           <Route path="/about" component={About} />
           <Route path="/" component={AppHome} />
         </Switch>
