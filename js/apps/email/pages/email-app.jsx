@@ -1,6 +1,7 @@
 import { EmailService } from "../services/email.service.js";
 import { EmailNav } from "../cmps/email-nav.jsx";
 import { EmailList } from "../cmps/emails-list.jsx";
+import { EmailSearch } from "../cmps/email-search.jsx";
 
 export class EmailApp extends React.Component {
   state = {
@@ -21,13 +22,20 @@ export class EmailApp extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.criteria !== prevState.criteria) {
-        this.loadEmails();
+      this.loadEmails();
     }
-}
+  }
 
   setCriteria = (status) => {
     this.setState((prevState) => ({
       criteria: { ...prevState.criteria, status },
+    }));
+  };
+
+  setSearch = ({ txt }) => {
+    if(!this.state.status)this.setCriteria('inbox');
+    this.setState((prevState) => ({
+      criteria: { ...prevState.criteria, txt },
     }));
   };
 
@@ -55,10 +63,13 @@ export class EmailApp extends React.Component {
     const { location } = this.props;
     if (!emails) return <React.Fragment>Loading...</React.Fragment>;
     return (
-      <div className="email-app-contain">
+      <section>
+        <EmailSearch setSearch={this.setSearch} />
+      <div className="emails-container">
         <EmailNav setCriteria={this.setCriteria} />
         <EmailList emails={emails} />
       </div>
+      </section>
     );
   }
 }

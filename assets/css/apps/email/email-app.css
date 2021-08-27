@@ -1,7 +1,21 @@
-.email-app-contain{
+.emails-container{
     display: flex;
 }
 
+.email-search{
+    display: flex;
+}
+
+.email-search input{
+    margin-inline-start: 0.5vw;
+    width: 90vw;
+}
+
+.email-search .email-search-isread-btn{
+    margin-inline-start: 0.5vw;
+    width: 9vw;
+    margin-inline-end: 0.5vw;
+}
 
 .email-navbar{
     margin-block-start: 3vh;
