@@ -25,7 +25,7 @@ export class LongTxt extends React.Component {
         }
         {text.length > 100 && (
           <span className="read-more" onClick={() => this.onToggleText()}>
-            {isLongTxtShown ? " Less..." : " More..."}
+            {isLongTxtShown ? <span style={{fontWeight: "bold"}}> Less...</span> : <span style={{fontWeight: "bold"}}> More...</span>}
           </span>
         )}
       </div>

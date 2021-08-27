@@ -57,6 +57,7 @@ function filterBy(criteria) {
 }
 
 function filterByText(email, txt) {
+  if(!txt) return email;
   return (
     email.body.toLowerCase().includes(txt.toLowerCase()) ||
     email.subject.toLowerCase().includes(txt.toLowerCase())
