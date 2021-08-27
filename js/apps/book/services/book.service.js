@@ -5,26 +5,11 @@ export const BookService = {
     getBookById,
     addReview,
     deleteReview,
-    getPriceCurr
+    getPriceCurr,
 }
 
 const gBooks = books;
 
-
-// function query(filterBy) {
-
-//     if (filterBy) {
-//         let { price, name } = filterBy
-//         if (price || +price === 0) {
-//             price = price
-//         }
-//         else price = 150
-//         name = name ? name : ''
-//         const bookToShow = gBooks.filter(book => book.title.includes(name) && book.listPrice.amount >= price)
-//         return Promise.resolve(bookToShow)
-//     }
-//     return Promise.resolve(gBooks)
-// }
 function query(filterBy) {
     if (filterBy) {
         let { title, minPrice, maxPrice } = filterBy

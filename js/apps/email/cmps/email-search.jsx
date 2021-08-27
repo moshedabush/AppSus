@@ -1,3 +1,4 @@
+
 export class EmailSearch extends React.Component {
   state = {
     searchBy: {
@@ -7,6 +8,8 @@ export class EmailSearch extends React.Component {
   };
 
   handleChange = (ev) => {
+      
+      
     const field = ev.target.name;
     const value = ev.target.value;
     this.setState(

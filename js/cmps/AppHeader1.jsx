@@ -1,25 +1,22 @@
 const { NavLink, withRouter } = ReactRouterDOM;
 
 class _AppHeader1 extends React.Component {
-  
-  state = {
-    searchTxt: '',
+  constructor(props) {
+    super(props);
+    this.state = {   
+     searchTxt: '',
     placeholder: 'search'
-
-  };
-
-
-    
- handleSubmit = (event) =>{
-  event.preventDefault();
-
-   const {searchTxt} = this.state
-
- }
+};
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  } 
+//  handleSubmit = (event) =>{
+//   event.preventDefault();
+//  }
 
 
  handleChange(event) {
-  console.log(event.target.value);
+  // console.log(event.target.value);
   this.setState({searchTxt: event.target.value});
 }
 
@@ -55,7 +52,8 @@ handleClick = (ev) => {
           src="https://www.freelogoservices.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6khvKCrRNOmx3NwXs1M3EMoAJtliIkj...Fr8fs8 "
         />
         <div className="search-container">
-          <form onSumbit={this.handleSubmit} action="/search" method="get">
+          {/* <form onSumbit={this.handleSubmit} action="/search" method="get"> */}
+          <form action="/search" method="get">
             <input onChange ={this.handleChange}
               className="search"
               id="searchleft"

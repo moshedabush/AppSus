@@ -2,6 +2,7 @@ import { EmailService } from "../services/email.service.js";
 import { EmailNav } from "../cmps/email-nav.jsx";
 import { EmailList } from "../cmps/emails-list.jsx";
 import { EmailSearch } from "../cmps/email-search.jsx";
+import { Loader } from "../../../cmps/loader.jsx";
 
 export class EmailApp extends React.Component {
   state = {
@@ -17,7 +18,6 @@ export class EmailApp extends React.Component {
   };
 
   componentDidMount() {
-    // this.loadUser();
     this.loadEmails();
   }
   componentDidUpdate(prevProps, prevState) {
@@ -59,9 +59,7 @@ export class EmailApp extends React.Component {
   render() {
     const { emails } = this.state;
     console.log(this.state);
-
-    const { location } = this.props;
-    if (!emails) return <React.Fragment>Loading...</React.Fragment>;
+    if (!emails) return <Loader/>;
     return (
       <section>
         <EmailSearch setSearch={this.setSearch} />

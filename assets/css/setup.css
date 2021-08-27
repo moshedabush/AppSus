@@ -7,3 +7,9 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+.loader{
+  display: flex;
+  justify-content: center;
+  margin-block-start: 45%;
+}

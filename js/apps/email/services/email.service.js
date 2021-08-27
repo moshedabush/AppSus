@@ -1,6 +1,5 @@
 "use strict";
 
-// import { utilService } from "../../../services/util.service.js";
 import { emails } from "../services/data.service.js";
 
 export const EmailService = {
@@ -11,15 +10,6 @@ export const EmailService = {
 const loggedinUser = { email: "user@appsus.com", fullname: "israel horse" };
 
 const gEmails = emails;
-
-// const criteria = {
-//   // optinal status: 'inbox/sent/trash/draft',
-//   status: 'draft',
-//   txt: 'puki',
-//   isRead: true,
-//   isStared: true,
-//   lables: ['important', 'romantic'],
-// }
 
 function getUser() {
   return Promise.resolve(loggedinUser);
