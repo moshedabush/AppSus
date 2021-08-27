@@ -7,6 +7,7 @@ export class noteApp extends React.Component {
     notes: null,
     // filterBy: '',
     selectedNote: null,
+    pinnedNotes: null
   };
 
   componentDidMount() {
@@ -24,26 +25,39 @@ export class noteApp extends React.Component {
 
 
   onRemoveNote = (noteId) => {
-    NoteService.deleteNote(noteId).then(this.loadNotes);
-
-
-
-    
+    NoteService.deleteNote(noteId).then(this.loadNotes);  
   }
+  onDuplicateNote = (noteId) => {
+    NoteService.duplicateNote(noteId).then(this.loadNotes)
+}
+
+onPinUnpinNote = (note) => {
+    NoteService.pinUnpinNote(note).then(this.loadNotes)
+}
 
   onSelectNote = (selectedNote) => {
     this.setState({ selectedNote });
 }
 
+onAddNote = (noteType, noteValue) => {
+  NoteService.addNote(noteType,noteValue).then(this.loadNotes)
+}
+
 
   render() {
-    const { notes } = this.state;
+    const { notes, pinnedNotes } = this.state;
     if (!notes) return <div>Loading...</div>;
     return (
       <section>
           <React.Fragment>
-            <NoteAdd notes={notes}/>
-            <NoteList notes={notes} onSelectNote={this.onSelectNote} onRemoveNote={this.onRemoveNote} /> 
+            <NoteAdd notes={notes} onAddNote={this.onAddNote} />
+            <NoteList 
+            notes={notes} 
+            onSelectNote={this.onSelectNote} 
+            onRemoveNote={this.onRemoveNote}
+            pinnedNotes={pinnedNotes}
+            onDuplicateNote={this.onDuplicateNote}
+            onPinUnpinNote={this.onPinUnpinNote} /> 
           </React.Fragment>
       </section>
     );

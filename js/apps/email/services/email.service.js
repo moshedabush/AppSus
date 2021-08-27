@@ -1,8 +1,7 @@
 "use strict";
 
-import { storageService } from "../../../services/storage.service";
 // import { utilService } from "../../../services/util.service.js";
-import {emails} from "../services/data.service.js";
+import { emails } from "../services/data.service.js";
 
 export const EmailService = {
   getUser,

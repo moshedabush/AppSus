@@ -1,65 +1,41 @@
-import { NoteService } from "../services/note.service";
-import { NotesTodos } from './note-todos.jsx';
-import { NotesOptions } from './note-options.jsx';
+import { ActionBar } from './action-bar.jsx';
+import { NoteDynamic } from './note-dynamic.jsx';
+import { NoteService } from '../services/note.service.js';
 
+export class NotePreview extends React.Component {
+  state = {
+    note: null,
+    noteStyle: {},
+  };
 
-export function NotePreview({ note, onSelectNote, onRemoveNote }) {
-  switch (note.type) {
-    case "note-txt":
-      return (
-        <div id="mydivheader"
-        className="note-preview"
-        onClick={() => {
-          onSelectNote(note);
-        }}
-        >
-                    <img onClick={() => {
-        onRemoveNote(note.id);
-      }}
-        className="close-btn"
-        src="assets/css/apps/book/img/close.png"
-      />
-          <h2>{note.info.txt}</h2>
-        </div>
-      );
-    case "note-img":
-      return (
-        <div id="mydiv"
-          style={{ backgroundColor: 'lightblue' }}
-          className="note-preview"
-          // onClick={() => {
-          //   onSelectNote(note);
-          // }}
-        >
-                    <img onClick={() => {
-        onRemoveNote(note.id);
-      }}
-        className="close-btn"
-        src="assets/css/apps/book/img/close.png"
-      />
-          <h2>{note.info.title}</h2>
-          <div id="mydivheader"className="note-img">
-            <img src={note.info.url}/>
-          </div>
-        </div>
-      );
-    case "note-todos":
-      return (
-        <div id="mydivheader"
-          className="note-preview"
-          onClick={() => {
-            onSelectNote(note);
-          }}
-        >
-                    <img onClick={() => {
-        onRemoveNote(note.id);
-      }}
-        className="close-btn"
-        src="assets/css/apps/book/img/close.png"
-      />
-          <h2>{note.info.label}</h2>
-        </div>
-      );
-      default: return (<h1>default</h1>)
+  componentDidMount() {
+    const note = this.props.note;
+    this.setState({ note });
+  }
+
+  handleColorChange = (color) => {
+    const note = this.state.note;
+    NoteService.changeColor(note.id, color);
+    this.setState({ note });
+  };
+
+  render() {
+    const { note } = this.state;
+    if (!note) return <div>Loading...</div>;
+
+    return (
+      <section className="note-preview tile" id="myDivHeader">
+        <NoteDynamic
+          note={note}
+          onRemoveNote={this.props.onRemoveNote}
+        />
+        <ActionBar
+          note={note}
+          handleColorChange={this.handleColorChange}
+          onDuplicateNote={this.props.onDuplicateNote}
+          onPinUnpinNote={this.props.onPinUnpinNote}
+        />
+      </section>
+    );
   }
 }

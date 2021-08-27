@@ -1,0 +1,41 @@
+.tile {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.tile:hover .toolbar {
+  height: 80%;
+}
+.toolbar {
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
+  background: #000000;
+  background: rgba(0, 0, 0, 0.6);
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  overflow: hidden;
+}
+.toolbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toolbar a {
+  display: block;
+  text-decoration: none;
+  color: rgba(133, 133, 133, 0.9);
+  margin: 0;
+  padding: 10px;
+}
+.toolbar i {
+  width: 20px;
+}
+.toolbar a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}

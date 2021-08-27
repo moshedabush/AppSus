@@ -1,5 +1,5 @@
 .note-img img {
-  width: 200px;
+  width: 100%;
   height: auto;
 }
 
@@ -16,12 +16,6 @@
   box-shadow: -1px 0px 6px 0px black;
   margin-bottom: 18px;
   flex-basis: 50%;
-}
-
-#mydiv {
-  z-index: 9;
-  background-color: #f1f1f1;
-  border: 1px solid #d3d3d3;
 }
 
 #mydivheader {

@@ -1,11 +1,14 @@
 'use strict';
 
 import { storageService } from "../../../services/storage.service.js";
+import { utilService } from "../../../services/util.service.js";
 
 export const NoteService = {
   query,
   deleteNote,
-  getNotes
+  getNotes,
+  addNote,
+  // duplicateNote
 };
 
 
@@ -61,13 +64,51 @@ function deleteNote(noteId) {
   return Promise.resolve();
 }
 
+function addNote(noteType, noteContent) {
 
-function _createNotes() {
-  let loadedNotes = storageService.loadFromStorage(KEY)
-  if (!loadedNotes || !loadedNotes.length) {
-    loadedNotes = notes
-    storageService.saveToStorage(KEY, notes)
+  if (noteType === 'note-txt') {
+    const newNote = {
+      id: utilService.makeId(),
+      type: noteType,
+      isPinned: false,
+      info: { txt: noteContent },
+    }
+    gNotes.unshift(newNote)
+    return Promise.resolve(newNote)
   }
-  gNotes = loadedNotes
-  return
+  if (noteType === 'note-img') {
+    const newNote = {
+      id: utilService.makeId(),
+      type: 'note-img',
+      info: {
+        url: noteContent,
+
+        title: 'note image',
+      },
+      style: {
+        backgroundColor: '#1911',
+      }
+    }
+    gNotes.unshift(newNote)
+    return Promise.resolve(newNote)
+  }
+}
+function duplicateNote(noteId) {
+  const idx = gNotes.findIndex(note => note.id === noteId)
+  const note = gNotes[idx]
+  gNotes.unshift({ ...note, id: utilService.makeId() })
+  return Promise.resolve(notes)
+}
+// function _createNotes() {
+//   let loadedNotes = storageService.loadFromStorage(KEY)
+//   if (!loadedNotes || !loadedNotes.length) {
+//     loadedNotes = notes
+//     storageService.saveToStorage(KEY, notes)
+//   }
+//   gNotes = loadedNotes
+//   return
+// }
+
+function pinNote(note) {
+
 }
