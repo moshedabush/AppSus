@@ -1,10 +1,50 @@
 const { NavLink, withRouter } = ReactRouterDOM;
 
 class _AppHeader1 extends React.Component {
+  
   state = {
     searchTxt: '',
-    msg: '',
+    placeholder: 'search'
+
   };
+
+
+    
+ handleSubmit = (event) =>{
+  event.preventDefault();
+
+   const {searchTxt} = this.state
+
+ }
+
+
+ handleChange(event) {
+  console.log(event.target.value);
+  this.setState({searchTxt: event.target.value});
+}
+
+
+handleClick = (ev) => {
+  ev.preventDefault()
+  console.log('name', ev.target.name);
+  const type = ev.target.name
+
+  let holder;
+  
+  switch(type) {
+    case 'note':
+      holder = 'search note'
+      break;
+      case 'email':
+      holder = 'search email'
+      break
+      case 'book':
+     holder = 'search book'
+  }
+  
+  this.setState({placeholder: holder})
+}
+
 
   render() {
     return (
@@ -15,13 +55,13 @@ class _AppHeader1 extends React.Component {
           src="https://www.freelogoservices.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6khvKCrRNOmx3NwXs1M3EMoAJtliIkj...Fr8fs8 "
         />
         <div className="search-container">
-          <form action="/search" method="get">
-            <input
+          <form onSumbit={this.handleSubmit} action="/search" method="get">
+            <input onChange ={this.handleChange}
               className="search"
               id="searchleft"
               type="search"
               name="q"
-              placeholder="Search"
+              placeholder={this.state.placeholder}
             ></input>
             <label className="button searchbutton" htmlFor="searchleft">
               <span className="mglass">&#9906;</span>
@@ -34,19 +74,19 @@ class _AppHeader1 extends React.Component {
           <span className="navicon"></span>
         </label>
         <ul className="menu">
-        <li>
-            <NavLink to="/email">Email</NavLink>
+        <li onClick={this.handleClick}>
+            <NavLink  name="email" to="/email">Email</NavLink>
           </li>
           <li>
-            <NavLink activeClassName="my-active" exact to="/">
+            <NavLink  activeClassName="my-active" exact to="/">
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/book">Book</NavLink>
+          <li onClick={this.handleClick}>
+            <NavLink name="book"to="/book">Book</NavLink>
           </li>
-          <li>
-            <NavLink to="/note">Note</NavLink>
+          <li onClick={this.handleClick} >
+            <NavLink name="note" to="/note">Note</NavLink>
           </li>
           <li>
             <NavLink to="/about">About</NavLink>
@@ -59,3 +99,8 @@ class _AppHeader1 extends React.Component {
 }
 
 export const AppHeader = withRouter(_AppHeader1);
+
+
+
+
+

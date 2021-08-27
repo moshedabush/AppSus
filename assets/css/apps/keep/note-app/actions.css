@@ -4,7 +4,7 @@
   position: relative;
 }
 .tile:hover .toolbar {
-  height: 80%;
+  height: 2.3rem;
 }
 .toolbar {
   height: 0;
@@ -22,6 +22,8 @@
   overflow: hidden;
 }
 .toolbar ul {
+  display: flex;
+  text-align: center;
   list-style: none;
   margin: 0;
   padding: 0;

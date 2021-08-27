@@ -5,7 +5,7 @@ export function NoteList({
   onSelectNote,
   onRemoveNote,
   pinnedNotes,
-  onPinUnpinNote,
+  onPinning,
   onDuplicateNote,
 }) {
   return (
@@ -17,7 +17,7 @@ export function NoteList({
             note={note}
             onRemoveNote={onRemoveNote}
             onDuplicateNote={onDuplicateNote}
-            onPinUnpinNote={onPinUnpinNote}
+            onPinning={onPinning}
           />
         ))}
       </div>
@@ -28,7 +28,7 @@ export function NoteList({
             note={note}
             onSelectNote={onSelectNote}
             onRemoveNote={onRemoveNote}
-            onPinUnpinNote={onPinUnpinNote}
+            onPinning={onPinning}
             onDuplicateNote={onDuplicateNote}
           />
         ))}

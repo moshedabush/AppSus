@@ -5,11 +5,11 @@ import { NoteService } from '../services/note.service.js';
 export class NotePreview extends React.Component {
   state = {
     note: null,
-    noteStyle: {},
   };
 
   componentDidMount() {
     const note = this.props.note;
+    console.log('prev comp moundted!!');
     this.setState({ note });
   }
 
@@ -24,7 +24,7 @@ export class NotePreview extends React.Component {
     if (!note) return <div>Loading...</div>;
 
     return (
-      <section className="note-preview tile" id="myDivHeader">
+      <section className="note-preview tile" id="myDivHeader" style={{backgroundColor: note.style.backgroundColor}}>
         <NoteDynamic
           note={note}
           onRemoveNote={this.props.onRemoveNote}
@@ -33,7 +33,7 @@ export class NotePreview extends React.Component {
           note={note}
           handleColorChange={this.handleColorChange}
           onDuplicateNote={this.props.onDuplicateNote}
-          onPinUnpinNote={this.props.onPinUnpinNote}
+          onPinning={this.props.onPinning}
         />
       </section>
     );

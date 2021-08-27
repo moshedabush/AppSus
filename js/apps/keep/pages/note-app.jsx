@@ -31,8 +31,8 @@ export class noteApp extends React.Component {
     NoteService.duplicateNote(noteId).then(this.loadNotes)
 }
 
-onPinUnpinNote = (note) => {
-    NoteService.pinUnpinNote(note).then(this.loadNotes)
+onPinning = (note) => {
+    NoteService.pinNote(note).then(this.loadNotes)
 }
 
   onSelectNote = (selectedNote) => {
@@ -57,7 +57,7 @@ onAddNote = (noteType, noteValue) => {
             onRemoveNote={this.onRemoveNote}
             pinnedNotes={pinnedNotes}
             onDuplicateNote={this.onDuplicateNote}
-            onPinUnpinNote={this.onPinUnpinNote} /> 
+            onPinning={this.onPinning} /> 
           </React.Fragment>
       </section>
     );

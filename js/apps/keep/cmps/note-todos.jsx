@@ -1,4 +1,4 @@
-export function NotesTodos({ note }) {
+export function NoteTodos({ note }) {
   return (
     <ul>
       {note.info.todos.map((todo) => (

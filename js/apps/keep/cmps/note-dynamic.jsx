@@ -1,3 +1,5 @@
+import {NoteTodos} from '../cmps/note-todos.jsx'
+
 
 export const NoteDynamic = ({ note , onRemoveNote}) => {
 
@@ -17,8 +19,7 @@ export const NoteDynamic = ({ note , onRemoveNote}) => {
             );
           case 'note-img':
             return (
-              <div
-                
+              <div  
               >
                 <img
                   onClick={() => {
@@ -44,6 +45,7 @@ export const NoteDynamic = ({ note , onRemoveNote}) => {
                   src="assets/css/apps/book/img/close.png"
                 />
                 <h2>{note.info.label}</h2>
+                <NoteTodos note={note}/>
               </div>
             );
           default:

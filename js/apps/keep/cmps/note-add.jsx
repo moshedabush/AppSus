@@ -7,7 +7,8 @@ export class NoteAdd extends React.Component {
 super(props);
   this.state = {
     note: null,
-    value: 'Enter your note content.',
+    value: undefined,
+    placeholder: 'enter your note content', 
     type: 'note-txt'
   };
 
@@ -22,7 +23,7 @@ super(props);
   
  handleSubmit = (event) =>{
    event.preventDefault();
-   event.stopPropogation()
+
     console.log('A name was submitted: ' + this.state.value);
     const {value, type} = this.state
 
@@ -40,21 +41,21 @@ super(props);
     console.log(ev.target.alt);
     const type = ev.target.alt
 
-    let value;
+    let placeholder;
     
     switch(type) {
       case 'note-img':
-        value = 'Enter image url'
+        placeholder = 'Enter image url'
         break;
         case 'note-txt':
-        value = 'enter your note content'
+        placeholder = 'enter your note content'
         break
         case 'note-todos':
-       value = 'enter your todo list!'
+       placeholder = 'enter your todo list!'
     }
     
     this.setState({type: type,
-    value: value})
+    placeholder: placeholder})
   }
 
   
@@ -62,7 +63,7 @@ render() {
   return(
     <form id="form1" onSubmit={this.handleSubmit}>
         <div className="bar">
-      <textarea value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="add new text note"></textarea>
+      <textarea value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder={this.state.placeholder}></textarea>
       <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
       <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
       <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>

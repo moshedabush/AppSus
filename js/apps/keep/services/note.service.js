@@ -8,7 +8,9 @@ export const NoteService = {
   deleteNote,
   getNotes,
   addNote,
-  // duplicateNote
+  changeColor,
+  duplicateNote,
+  pinNote,
 };
 
 
@@ -16,11 +18,16 @@ export const NoteService = {
 // _createNotes()
 const KEY = 'noteDB';
 
+
+const pinnedNotes = [];
 var gNotes = [
   {
     id: 'n101',
     type: 'note-txt',
     isPinned: true,
+    style: {
+      backgroundColor: '#99ffcc',
+    },
     info: {
       txt: 'Fullstack Me Baby!',
     },
@@ -28,18 +35,25 @@ var gNotes = [
   {
     id: 'n102',
     type: 'note-img',
+    isPinned: false,
+    style: {
+      backgroundColor: '#ffcc99',
+    },
     info: {
       url: 'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1200,h_1495/https://www.knetizen.com/wp-content/uploads/2020/11/BTS-V-on-the-official-Instagram-account-3.jpg',
 
       title: 'Bobi and Me',
     },
-    style: {
-      backgroundColor: '#1111',
-    },
+
+
   },
   {
     id: 'n103',
+    isPinned: false,
     type: 'note-todos',
+    style: {
+      backgroundColor: '#1111',
+    },
     info: {
       label: 'Get my stuff together',
       todos: [
@@ -71,7 +85,11 @@ function addNote(noteType, noteContent) {
       id: utilService.makeId(),
       type: noteType,
       isPinned: false,
+      style: {
+        backgroundColor: '#1911',
+      },
       info: { txt: noteContent },
+
     }
     gNotes.unshift(newNote)
     return Promise.resolve(newNote)
@@ -80,6 +98,8 @@ function addNote(noteType, noteContent) {
     const newNote = {
       id: utilService.makeId(),
       type: 'note-img',
+      isPinned: false,
+
       info: {
         url: noteContent,
 
@@ -97,8 +117,36 @@ function duplicateNote(noteId) {
   const idx = gNotes.findIndex(note => note.id === noteId)
   const note = gNotes[idx]
   gNotes.unshift({ ...note, id: utilService.makeId() })
-  return Promise.resolve(notes)
+  return Promise.resolve(gNotes)
 }
+
+function pinNote(note) {
+  if (note.isPinned) {
+    const idx = pinnedNotes.findIndex(pNote => pNote.id === note.id)
+    const selectetNote = pinnedNotes[idx]
+    selectetNote.isPinned = false
+    pinnedNotes.splice(idx, 1)
+    gNotes.unshift(selectetNote)
+  } else {
+    const idx = gNotes.findIndex(pNote => pNote.id === note.id)
+    const selectetNote = gNotes[idx]
+    selectetNote.isPinned = true
+    gNotes.splice(idx, 1)
+    pinnedNotes.unshift(selectetNote)
+    gNotes.unshift(selectetNote)
+  }
+  return Promise.resolve()
+
+}
+
+
+function changeColor(noteIdx, color) {
+  const note = gNotes.find(note => note.id === noteIdx)
+  note.style.backgroundColor = color
+  return Promise.resolve(gNotes)
+}
+
+
 // function _createNotes() {
 //   let loadedNotes = storageService.loadFromStorage(KEY)
 //   if (!loadedNotes || !loadedNotes.length) {
@@ -108,7 +156,3 @@ function duplicateNote(noteId) {
 //   gNotes = loadedNotes
 //   return
 // }
-
-function pinNote(note) {
-
-}
