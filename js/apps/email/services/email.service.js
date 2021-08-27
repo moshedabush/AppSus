@@ -8,7 +8,7 @@ export const EmailService = {
   emailsToShow
 };
 
-const loggedinUser = { email: "Kuki@appsus.com", fullname: "Kuki Appsus" };
+const loggedinUser = { email: "user@appsus.com", fullname: "israel horse" };
 
 const gEmails = emails;
 
@@ -25,16 +25,20 @@ function getUser() {
   return Promise.resolve(loggedinUser);
 }
 
-function emailsToShow(user, criteria) {
-  let emails = filterBy(user, criteria);
+
+
+function emailsToShow(criteria) {
+  let emails = filterBy(criteria);
   return Promise.resolve(emails);
 }
 
-function filterBy(user, criteria) {
+function filterBy(criteria) {
   let emails = gEmails.filter((email) => {
     switch (criteria.status) {
+      case "inbox":
+        return email;
       case "sent":
-        return email.from === user.email;
+        return email.isSent;
       case "trash":
         return email.isTrash;
       case "draft":
@@ -43,6 +47,7 @@ function filterBy(user, criteria) {
         return true;
     }
   });
+  console.log(emails);
   emails = emails.filter((email) => {
     return (criteria.isStared && email.isStared) || (!criteria.isStared && email);
   });

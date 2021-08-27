@@ -1,6 +1,6 @@
 import { EmailService } from "../services/email.service.js";
-import { EmailPreview } from "../cmps/email-preview.jsx";
 import { EmailNav } from "../cmps/email-nav.jsx";
+import { EmailList } from "../cmps/emails-list.jsx";
 
 export class EmailApp extends React.Component {
   state = {
@@ -16,21 +16,19 @@ export class EmailApp extends React.Component {
   };
 
   componentDidMount() {
-    console.log("mounted!!email comp");
-    this.loadUser();
-  }
-
-  setCriteria = () => {
-    const criteria = {
-      // optinal status: 'inbox/sent/trash/draft',
-      status: "draft",
-      txt: "puki",
-      isRead: true,
-      isStared: true,
-      lables: ["important", "romantic"],
-    };
-    this.setState({ criteria: criteria });
+    // this.loadUser();
     this.loadEmails();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.criteria !== prevState.criteria) {
+        this.loadEmails();
+    }
+}
+
+  setCriteria = (status) => {
+    this.setState((prevState) => ({
+      criteria: { ...prevState.criteria, status },
+    }));
   };
 
   loadUser = () => {
@@ -44,24 +42,22 @@ export class EmailApp extends React.Component {
   };
 
   loadEmails = () => {
-    const { currUser, criteria } = this.state;
-
-    EmailService.emailsToShow(currUser, criteria).then((emails) =>
-      this.setState({ emails })
-    );
+    const { criteria } = this.state;
+    EmailService.emailsToShow(criteria).then((emails) => {
+      this.setState({ emails });
+    });
   };
 
   render() {
     const { emails } = this.state;
+    console.log(this.state);
+
+    const { location } = this.props;
     if (!emails) return <React.Fragment>Loading...</React.Fragment>;
     return (
       <div className="email-app-contain">
-        <EmailNav />
-        <section className="email-list">
-          {emails.map((email) => (
-            <EmailPreview key={email.id} email={email} />
-          ))}
-        </section>
+        <EmailNav setCriteria={this.setCriteria} />
+        <EmailList emails={emails} />
       </div>
     );
   }
