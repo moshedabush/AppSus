@@ -24,38 +24,24 @@ export class BookFilter extends React.Component {
         const { title, minPrice, maxPrice } = this.state.filterBy;
         return (
             <form className='book-filter' onSubmit={this.onFilter}>
-                <div className='filter'>
-                    <label htmlFor='by-title'>
-                        <div className='search-filter'>
-                            <img src='assets/css/apps/book/img/search.png' />
-                        </div>
-                        By title
-                 </label>
-                    <input name='title' id='by-title' type='text'
-                        placeholder='Title' value={title} onChange={this.handleChange}
-                    />
-                </div>
+                        <input className='text-filter' name='title' id='by-title' type='search'
+                            placeholder='Search Book Title' value={title} onChange={this.handleChange}
+                        />
                 <div className='filter'>
                     <label htmlFor='min-price'>
                         <div className='search-filter'>
-                            <img src='assets/css/apps/book/img/search.png' />
                         </div>
                         Min Price
                  </label>
-                    <input name='minPrice' id='min-price' type='number'
-                        placeholder='Min Price' value={minPrice} onChange={this.handleChange}
-                    />
+                 <input name='minPrice' id='min-price' type="range" min="19" max="176.00" step="0.50" value={minPrice} onChange={this.handleChange} />
                 </div>
                 <div className='filter'>
                     <label htmlFor='max-price'>
                         <div className='search-filter'>
-                            <img src='assets/css/apps/book/img/search.png' />
                         </div>
                         Max Price
                  </label>
-                    <input name='maxPrice' id='max-price' type='number'
-                        placeholder='Max Price' value={maxPrice} onChange={this.handleChange}
-                    />
+                 <input name='maxPrice' id='max-price' type="range" min="19" max="176.00" step="0.50" value={maxPrice} onChange={this.handleChange} />
                 </div>
             </form>
         );
