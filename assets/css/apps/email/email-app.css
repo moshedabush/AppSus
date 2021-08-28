@@ -33,7 +33,7 @@
 
 
 .email-navbar img{
-    height: 2.5vh;
+    height: 3vh;
     margin-inline-start: 1vh;
     margin-block-end: 1vh;
 }
@@ -88,7 +88,7 @@
 @media (min-width: 540px) {
 
  .email-navbar img{
-    height: 2.5vh;
+    height: 4vh;
  }
 
 .email-navbar .email-add img{
