@@ -20,7 +20,7 @@ export class EmailPreview extends React.Component {
           <label className="container">
             <span className="checkmark"></span>
           </label>
-          <h3>{email.subject}</h3>
+          <h4>{email.subject}</h4>
           <div className="email-date">{utilService.formatDate(email.sentAt)}</div>
         </article> 
         {isExpanded && <EmailPreviewExpanded email={email} />}

@@ -28,16 +28,17 @@
 .email-list{
     background-color: rgb(245, 245, 245);
     margin-block-start: 3vh;
+    width: 70vw;
 }
 
 
 .email-navbar img{
-    height: 3.5vh;
+    height: 2.5vh;
     margin-inline-start: 1vh;
     margin-block-end: 1vh;
 }
 .email-navbar a:hover{
-    background-color: rgb(244, 112, 112);
+    background-color: rgb(200, 112, 244);
 }
 
 .email-navbar .add-email-btn{
@@ -49,7 +50,7 @@
 
 .email-navbar .email-add img{
     margin-block-end: 1vh;
-    height: 5vh;
+    height: 3vh;
     border-radius: 1rem;
     border: 1px solid #cfcece;
     box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
@@ -76,10 +77,21 @@
     gap: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px 100px;
+    padding: 20px 50px;
     line-height: 1.5em;
 }
 
 .email-preview-expanded:hover {
     box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+@media (min-width: 540px) {
+
+ .email-navbar img{
+    height: 2.5vh;
+ }
+
+.email-navbar .email-add img{
+    height: 5vh;
+}
 }
