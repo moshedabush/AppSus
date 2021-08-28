@@ -41,6 +41,23 @@
   width: 70vw;
 }
 
+.email-compose{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(76 38 78 / 62%);
+  text-align: center;
+  padding: 6vh;
+}
+.email-compose input{
+  height: 3.33vh;
+  width: 41vw;
+}
+.email-compose textarea{
+  height: 9.99vh;
+  width: 41vw;
+}
+
 .email-navbar img {
   height: 3vh;
   margin-inline-start: 1vh;

@@ -15,8 +15,8 @@
   margin-inline-end: 1vh;
   margin-block-end: 1vh;
   border-radius: 1rem;
-  border: 1px solid #2e2e2e;
   transition: transform 0.5s, background-color 0.5s;
+  transition: box-shadow 0.3s ease 0s;
 }
 
 .book-preview a:link {
