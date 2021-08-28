@@ -1,61 +1,97 @@
-.emails-container{
-    display: flex;
+.emails-container {
+  display: flex;
 }
 
-.email-search{
-    display: flex;
+.email-search {
+  display: flex;
 }
 
-.email-search input{
-    margin-inline-start: 0.5vw;
-    width: 90vw;
+.email-search input {
+  margin-inline-start: 0.5vw;
+  width: 90vw;
 }
 
-.email-search .email-search-isread-btn{
-    margin-inline-start: 0.5vw;
-    width: 9vw;
-    margin-inline-end: 0.5vw;
+.email-search .email-search-isread-btn {
+  margin-inline-start: 0.5vw;
+  width: 9vw;
+  margin-inline-end: 0.5vw;
 }
 
-.email-navbar{
-    margin-block-start: 3vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffff;
-    z-index: 3;
-    width: 30vw;
+.email-navbar {
+  margin-block-start: 3vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffff;
+  width: 30vw;
 }
 
-.email-list{
-    background-color: rgb(245, 245, 245);
-    margin-block-start: 3vh;
+.email-list {
+  background-color: rgb(245, 245, 245);
+  margin-block-start: 3vh;
+  width: 70vw;
 }
 
-
-.email-navbar img{
-    height: 3.5vh;
-    margin-inline-start: 1vh;
-    margin-block-end: 2vh;
+.email-navbar img {
+  height: 2.5vh;
+  margin-inline-start: 1vh;
+  margin-block-end: 1vh;
 }
-.email-navbar a:hover{
-    background-color: rgb(244, 112, 112);
-}
-
-.add-email-btn{
-    align-self: center;
-}
-.email-navbar a.add-email-btn:hover{
-    background-color: unset;
+.email-navbar a:hover {
+  background-color: rgb(200, 112, 244);
 }
 
-.add-email-btn img{
-    margin-block-end: 3vh;
+.email-navbar .add-email-btn {
+  align-self: center;
+}
+.email-navbar a.add-email-btn:hover {
+  background-color: unset;
+}
+
+.email-navbar .email-add img {
+  margin-block-end: 1vh;
+  height: 3vh;
+  border-radius: 1rem;
+  border: 1px solid #cfcece;
+  box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
+  cursor: pointer;
+}
+
+.email-preview {
+  display: flex;
+  margin-block-end: 1;
+  cursor: pointer;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.email-preview:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+.email-date {
+  margin-block-start: 2.5vh;
+}
+
+.email-preview-expanded {
+  background-color: #fff;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  line-height: 1.5em;
+}
+
+.email-preview-expanded:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+@media (min-width: 540px) {
+  .email-navbar img {
+    height: 2.5vh;
+  }
+
+  .email-navbar .email-add img {
     height: 5vh;
-    border-radius: 1rem;
-    border: 1px solid #cfcece;
-    box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
-}
-
-.email-preview{
-    margin-block-end: 1;
+  }
 }

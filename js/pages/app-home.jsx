@@ -1,12 +1,12 @@
 import { Desk } from "../cmps/desk-img.jsx"
 
-const { NavLink } = ReactRouterDOM
+const { NavLink,Link } = ReactRouterDOM
 
 
 export function AppHome() {
     return (
         <section className="Home">
-           <NavLink to="/"> <img className="home-logo" src="assets/css/img/horse-icon2.png" /></NavLink>
+           <Link to="/"> <img className="home-logo" src="assets/css/img/horse-icon2.png" /></Link>
             <nav>
                 <div className="apps-icons">
                 <NavLink to="/book" ><img src="assets/css/img/book-icon.png"/></NavLink>

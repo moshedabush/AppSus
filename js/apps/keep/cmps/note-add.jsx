@@ -30,6 +30,22 @@ super(props);
  handleSubmit = (event) =>{
    event.preventDefault();
 
+   const initial = {
+    note: null,
+    value: undefined,
+    title: '',
+    placeholder: 'enter your note content', 
+    type: 'note-txt',
+    todos: []
+  };
+
+  this.setState({
+    value: '',
+    title: '', 
+    note:null,
+    todos:[]
+})
+
 
   }
 
@@ -81,8 +97,9 @@ render() {
           <div className="bar">
         <textarea  name="value" value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder={this.state.placeholder}></textarea>
         <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/post-it.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/to-do-list.png" alt="note-todos" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/youtube.png" alt="note-video" /></a>
   
       </div>
   
@@ -100,9 +117,31 @@ render() {
         <input name="title" value={this.state.title} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="image-title"></input>
 
             </div>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
+            <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/post-it.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/to-do-list.png" alt="note-todos" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/youtube.png" alt="note-video" /></a>
+  
+      </div>
+  
+        <input onClick={() => this.props.onAddNote(this.state.type,this.state.value,this.state.title )} className="sumbit-btn"  value="Submit" type="submit" form="form1"></input>
+  
+        </form>
+    )
+    case 'note-video': 
+    return(
+      <form id="form1" onSubmit={this.handleSubmit}>
+          <div className="bar">
+            <div>
+
+        <input name="value" value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="enter-video-url"></input>
+        <input name="title" value={this.state.title} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="video-title"></input>
+
+            </div>
+            <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/post-it.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/to-do-list.png" alt="note-todos" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/youtube.png" alt="note-video" /></a>
   
       </div>
   
@@ -126,8 +165,9 @@ render() {
 
             </div>
         <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
-        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/post-it.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/to-do-list.png" alt="note-todos" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/youtube.png" alt="note-video" /></a>
   
       </div>
   

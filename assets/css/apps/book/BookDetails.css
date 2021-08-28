@@ -124,6 +124,25 @@ img.close-btn {
   height: 15px;
 }
 
+img.close-btn:hover {
+  animation: logo-head 0.5s;
+}
+
+@keyframes logo-head {
+  0% {
+    transform: rotate(0deg) scale(100%);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .titel-currBook {
   font-size: 22px;
   font-weight: bold;

@@ -53,10 +53,7 @@ export const ActionBar = ({
           >
             color
           </a>
-          <div>
-
-          {/* <SketchPicker/> */}
-          </div>
+        
           </div>
         </li>
       </ul>

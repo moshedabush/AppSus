@@ -62,6 +62,20 @@ var gNotes = [
       ],
     },
   },
+  {
+    id: 'n104',
+    type: 'note-video',
+    isPinned: false,
+    info: {
+      label: 'spongebob🥳',
+      // url: 'https://www.youtube.com/watch?v=y_KCK-pHzqk'
+      // url: 'https://www.youtube.com/watch?v=dlOHVCZZwEc&t=331s'
+      url: 'https://www.youtube.com/watch?v=RKj-Cyxu3RE'
+    },
+    style: {
+      backgroundColor: '#998898',
+    },
+  }
 ];
 
 function query() {
@@ -129,9 +143,28 @@ function addNote(noteType, noteContent, noteTitle, todosList) {
     }
     gNotes.unshift(newNote)
     return Promise.resolve()
+  }
+  if (noteType === 'note-video') {
+    const newNote = {
+      id: utilService.makeId(),
+      type: 'note-video',
+      isPinned: false,
+      info: {
+        label: noteTitle,
+        // url: 'https://www.youtube.com/watch?v=y_KCK-pHzqk'
+        // url: 'https://www.youtube.com/watch?v=dlOHVCZZwEc&t=331s'
+        url: noteContent
+      },
+      style: {
+        backgroundColor: '#998898',
+      },
+    }
+    gNotes.unshift(newNote)
+    return Promise.resolve()
 
   }
 }
+
 
 
 function duplicateNote(noteId) {
@@ -159,6 +192,7 @@ function pinNote(note) {
   return Promise.resolve()
 
 }
+
 
 
 function changeColor(noteIdx, color) {

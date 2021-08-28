@@ -48,8 +48,24 @@ export const NoteDynamic = ({ note , onRemoveNote}) => {
                 <NoteTodos note={note}/>
               </div>
             );
-          default:
-            return <h1>default</h1>;
+            case 'note-video': 
+            return     <div  className="video-div"
+            >
+              <img
+                onClick={() => {
+                  onRemoveNote(note.id);
+                }}
+                className="close-btn"
+                src="assets/css/apps/book/img/close.png"
+              />
+              <h2>{note.info.label}</h2>
+              <div className='video-container'>
+          <iframe src={note.info.url.replace('watch?v=', 'embed/')}
+            title="video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+          </iframe>
+        </div>
+            </div>
+ 
         }
       }
       

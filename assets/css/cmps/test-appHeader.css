@@ -16,6 +16,25 @@ a {
   cursor: pointer;
 }
 
+.header img:hover {
+  animation: logo-head 0.5s;
+}
+
+@keyframes logo-head {
+  0% {
+    transform: rotate(0deg) scale(100%);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .header {
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.438);
