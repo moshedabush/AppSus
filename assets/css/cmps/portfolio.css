@@ -1,0 +1,72 @@
+/* socials  */
+
+.social-nav {
+  display: flex;
+}
+
+.social-nav li {
+  margin: 10px 14px;
+}
+
+.social-nav li a {
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background-color: #516fad;
+  width: 2.5rem;
+  height: 2.5rem;
+  /* line-height: 40px; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+
+  transition: background-color 0.2s ease-in;
+}
+
+.social-nav a.fa-facebook-f:hover {
+  background-color: #6a8bce;
+}
+
+.social-nav a.fa-twitter:hover {
+  background-color: #1da1f2;
+}
+
+.social-nav a.fa-github:hover {
+  background-color: #000000;
+}
+
+.social-nav a {
+  text-align: center;
+  font-weight: bold;
+}
+
+.clean-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* deatiles section style */
+.port-deatiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.me-img {
+  border-radius: 50%;
+  max-width: 180px;
+}
+
+.me-text {
+  max-width: 91.7%;
+  height: 100%;
+  margin-top: 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

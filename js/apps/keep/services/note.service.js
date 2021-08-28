@@ -23,7 +23,7 @@ const KEY = 'noteDB';
 const pinnedNotes = [];
 var gNotes = [
   {
-    id: 'n101',
+    id: utilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     style: {
@@ -34,7 +34,29 @@ var gNotes = [
     },
   },
   {
-    id: 'n102',
+    id: utilService.makeId(),
+    type: 'note-txt',
+    isPinned: false,
+    style: {
+      backgroundColor: '#3r423',
+    },
+    info: {
+      txt: 'clean my room!!',
+    },
+  },
+  {
+    id: utilService.makeId(),
+    type: 'note-txt',
+    isPinned: true,
+    style: {
+      backgroundColor: '#99ffcc',
+    },
+    info: {
+      txt: 'Fullstack Me Baby!',
+    },
+  },
+  {
+    id: utilService.makeId(),
     type: 'note-img',
     isPinned: false,
     style: {
@@ -47,9 +69,23 @@ var gNotes = [
     },
 
 
+  }, {
+    id: utilService.makeId(),
+    type: 'note-img',
+    isPinned: true,
+    style: {
+      backgroundColor: '#ffcc99',
+    },
+    info: {
+      url: 'https://www.thesprucepets.com/thmb/GyrWr3rstJx5Mdm234M20Y6vvUs=/3264x1836/smart/filters:no_upscale()/FunnyDogSmiling-ef11b73fa1834734b8c47025039fcd43.jpg',
+
+      title: 'puki mitfanen',
+    },
+
+
   },
   {
-    id: 'n103',
+    id: utilService.makeId(),
     isPinned: false,
     type: 'note-todos',
     style: {
@@ -64,17 +100,45 @@ var gNotes = [
     },
   },
   {
-    id: 'n104',
+    id: utilService.makeId(),
+    isPinned: false,
+    type: 'note-todos',
+    style: {
+      backgroundColor: '#1111',
+    },
+    info: {
+      label: 'todo list monday',
+      todos: [
+        { id: utilService.makeId(), txt: 'feed puki', doneAt: 1242211 },
+        { id: utilService.makeId(), txt: 'wash the dishes', doneAt: 187111111 },
+        { id: utilService.makeId(), txt: 'clean my house', doneAt: 187111111 },
+        { id: utilService.makeId(), txt: 'fix the car', doneAt: 187111111 },
+        { id: utilService.makeId(), txt: 'kiss puki', doneAt: 187111111 },
+      ],
+    },
+  },
+  {
+    id: utilService.makeId(),
     type: 'note-video',
     isPinned: false,
     info: {
       label: 'spongebob🥳',
-      // url: 'https://www.youtube.com/watch?v=y_KCK-pHzqk'
-      // url: 'https://www.youtube.com/watch?v=dlOHVCZZwEc&t=331s'
       url: 'https://www.youtube.com/watch?v=RKj-Cyxu3RE'
     },
     style: {
       backgroundColor: '#998898',
+    },
+  },
+  {
+    id: utilService.makeId(),
+    type: 'note-video',
+    isPinned: false,
+    info: {
+      label: 'study time',
+      url: 'https://www.youtube.com/watch?v=eGy-E8-cTjQ'
+    },
+    style: {
+      backgroundColor: '#342242',
     },
   }
 ];

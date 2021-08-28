@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Helvetica, sans-serif;
 }
 
@@ -264,7 +265,7 @@ a {
 }
 
 @media (max-width: 540px) {
-.searchbutton {
-  display: none;
-}
+  .searchbutton {
+    display: none;
+  }
 }
