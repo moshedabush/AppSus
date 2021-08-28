@@ -1,3 +1,4 @@
+import { utilService } from '../../../services/util.service.js';
 import { EmailPreviewExpanded } from "./email-preview-expanded.jsx";
 
 const { Link } = ReactRouterDOM;
@@ -20,6 +21,7 @@ export class EmailPreview extends React.Component {
             <span className="checkmark"></span>
           </label>
           <h3>{email.subject}</h3>
+          <div className="email-date">{utilService.formatDate(email.sentAt)}</div>
         </article> 
         {isExpanded && <EmailPreviewExpanded email={email} />}
       </div>

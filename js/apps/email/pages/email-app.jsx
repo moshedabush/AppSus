@@ -19,6 +19,7 @@ export class EmailApp extends React.Component {
 
   componentDidMount() {
     this.loadEmails();
+    this.loadUser();
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.criteria !== prevState.criteria) {
@@ -38,14 +39,12 @@ export class EmailApp extends React.Component {
       criteria: { ...prevState.criteria, txt },
     }));
   };
+  
 
   loadUser = () => {
-    console.log("loading...");
-
     EmailService.getUser().then((user) =>
-      this.setState({ currUser: user }, () => {
-        this.loadEmails();
-      })
+      this.setState({ currUser: user }
+      )
     );
   };
 

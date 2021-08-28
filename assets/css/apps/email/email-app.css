@@ -57,6 +57,29 @@
 }
 
 .email-preview{
+    display: flex;
     margin-block-end: 1;
     cursor: pointer;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.email-preview:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+.email-date{
+    margin-block-start: 2.5vh;
+}
+
+.email-preview-expanded {
+    background-color: #fff;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px;
+    line-height: 1.5em;
+}
+
+.email-preview-expanded:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }

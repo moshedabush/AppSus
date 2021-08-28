@@ -23,7 +23,7 @@ class _AppHeader1 extends React.Component {
 
 handleClick = (ev) => {
   ev.preventDefault()
-  console.log('name', ev.target.name);
+  // console.log('name', ev.target.name);
   const type = ev.target.name
 
   let holder;

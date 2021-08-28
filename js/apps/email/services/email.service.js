@@ -5,6 +5,7 @@ import { emails } from "../services/data.service.js";
 export const EmailService = {
   getUser,
   emailsToShow,
+  addEmail,
 };
 
 const loggedinUser = { email: "user@appsus.com", fullname: "israel horse" };
@@ -18,6 +19,26 @@ function getUser() {
 function emailsToShow(criteria) {
   let emails = filterBy(criteria);
   return Promise.resolve(emails);
+}
+
+function createEmail(subject, body, to) {
+  return {
+    id: utilService.makeId(),
+    from: loggedinUser.fullname,
+    subject,
+    body,
+    isRead: true,
+    sentAt: Date.now(),
+    isStarred: false,
+    to,
+    status: "sent",
+  };
+}
+
+function addEmail(emailData) {
+  const email = createEmail(emailData.subject, emailData.body, emailData.to);
+  gEmails.unshift(email);
+  return Promise.resolve();
 }
 
 function filterBy(criteria) {
@@ -47,7 +68,7 @@ function filterBy(criteria) {
 }
 
 function filterByText(email, txt) {
-  if(!txt) return email;
+  if (!txt) return email;
   return (
     email.body.toLowerCase().includes(txt.toLowerCase()) ||
     email.subject.toLowerCase().includes(txt.toLowerCase())
