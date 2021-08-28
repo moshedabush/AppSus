@@ -11,7 +11,7 @@
   z-index: 3;
 }
 
-main .email-search input {
+.email-search input {
   height: 3.33vh;
   width: 41vw;
   margin-block-start: 2.3vh;
@@ -105,7 +105,7 @@ main .email-search input {
 }
 
 
-input:first-child {
+.email-search input:first-child {
   background-image: url(https://cdn4.iconfinder.com/data/icons/round-mobile-ui-set/512/letter-message-email-mail-20.png);
   background-position: 10px center;
   background-repeat: no-repeat;
@@ -123,8 +123,6 @@ input:first-child {
   -webkit-transition: all 0.2s;
   -moz-transition: all 2s;
   transition: all 0.2s;
-
-  width: 200px;
 }
 
 @media (min-width: 540px) {
