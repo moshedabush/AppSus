@@ -4,7 +4,6 @@
   flex-direction: column;
   background-color: #ebebeb;
   color: rgb(20, 20, 20);
-  /* justify-content: space-evenly; */
   height: 90vh;
 }
 
@@ -20,7 +19,6 @@
 html,
 body {
   width: 100vw;
-  height: 100vh;
 }
 
 nav{

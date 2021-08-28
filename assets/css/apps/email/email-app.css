@@ -1,6 +1,5 @@
 .emails-container {
   display: flex;
-  /* margin-block-start: 5vh; */
 }
 
 .email-search {
@@ -13,23 +12,17 @@
 }
 
 .email-search input {
-  /* margin-inline-start: 0.5vw;
-  width: 90vw; */
-  /* margin-inline-start: 31vw; */
-  height: 5vh;
+  height: 3.33vh;
   width: 40vw;
-  margin-block-start: 2vh;
+  margin-block-start: 2.3vh;
 }
 
 .email-search .email-search-isread-btn {
-  /* margin-inline-start: 0.5vw;
-  width: 9vw;
-  margin-inline-end: 0.5vw; */
   margin-inline-start: 0.5vh;
   width: 9vw;
-  height: 5vh;
+  height: 3.33vh;
   margin-inline-end: 0.5vw;
-  margin-block-start: 2vh;
+  margin-block-start: 2.3vh;
 }
 
 .email-navbar {

@@ -1,6 +1,3 @@
-// import { NoteService } from "../../keep/services/note.service.js";
-// import { utilService } from "../../../services/util.service.js";
-// import { noteApp } from "../pages/note-app.jsx"
 
 import { utilService } from "../../../services/util.service.js";
 
@@ -25,7 +22,6 @@ super(props);
   }
 
   componentDidMount() {
-    console.log('in did mount!!!!!', this.props);
   }
 
   

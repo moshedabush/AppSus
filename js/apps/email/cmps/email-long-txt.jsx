@@ -1,7 +1,6 @@
 export class LongTxt extends React.Component {
 
   state = {
-      // isLongTxtShown: this.props.isLongTxtShown,
       isLongTxtShown: false,
 
   }
@@ -13,7 +12,6 @@ export class LongTxt extends React.Component {
   }
 
   onToggleText = () => {
-      // const newIsLongTxtShown = !this.state.isLongTxtShown;
       this.setState((prevState) => ({ isLongTxtShown: !prevState.isLongTxtShown }));
   }
 

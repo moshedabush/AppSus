@@ -5,7 +5,6 @@ export class ChangColor extends React.Component {
     color: this.props.note.style.backgroundColor
   }
   componentDidMount() {
-    console.log('color comp moundted!!!!!!!!!!!!!!!');
   }
 
   handleChange = (ev) => {

@@ -1,4 +1,4 @@
-import { ActionBar } from './action-bar.jsx';
+import { ActionBar } from './note-action-bar.jsx';
 import { NoteDynamic } from './note-dynamic.jsx';
 import { NoteService } from '../services/note.service.js';
 import { Loader } from '../../../cmps/loader.jsx';
@@ -11,7 +11,6 @@ export class NotePreview extends React.Component {
 
   componentDidMount() {
     const note = this.props.note;
-    console.log('prev comp moundted!!');
     this.setState({ note });
   }
 

@@ -1,4 +1,4 @@
-import { ChangColor } from '../cmps/colorComp.jsx';
+import { ChangColor } from './note-colorComp.jsx';
 
 export const ActionBar = ({
   handleColorChange,
