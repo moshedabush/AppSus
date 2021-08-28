@@ -2,6 +2,7 @@ const { NavLink, withRouter } = ReactRouterDOM;
 
 class _AppHeader1 extends React.Component {
   
+
   state = {
     searchTxt: '',
     placeholder: 'search'
@@ -9,18 +10,26 @@ class _AppHeader1 extends React.Component {
   };
 
 
-    
+
  handleSubmit = (event) =>{
   event.preventDefault();
 
    const {searchTxt} = this.state
 
+
  }
 
 
  handleChange(event) {
+
   console.log(event.target.value);
-  this.setState({searchTxt: event.target.value});
+  const {searchTxt} = this.state
+
+  console.log(searchTxt)
+
+  // this.state.searchTxt = event.target.value;
+
+  // this.setState({searchTxt: event.target.value});
 }
 
 
@@ -55,7 +64,7 @@ handleClick = (ev) => {
           src="https://www.freelogoservices.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6khvKCrRNOmx3NwXs1M3EMoAJtliIkj...Fr8fs8 "
         />
         <div className="search-container">
-          <form onSumbit={this.handleSubmit} action="/search" method="get">
+          <form  action="/search" method="get">
             <input onChange ={this.handleChange}
               className="search"
               id="searchleft"
@@ -83,7 +92,7 @@ handleClick = (ev) => {
             </NavLink>
           </li>
           <li onClick={this.handleClick}>
-            <NavLink name="book"to="/book">Book</NavLink>
+            <NavLink name="book" to="/book">Book</NavLink>
           </li>
           <li onClick={this.handleClick} >
             <NavLink name="note" to="/note">Note</NavLink>

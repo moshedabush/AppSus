@@ -39,8 +39,9 @@ onPinning = (note) => {
     this.setState({ selectedNote });
 }
 
-onAddNote = (noteType, noteValue) => {
-  NoteService.addNote(noteType,noteValue).then(this.loadNotes)
+onAddNote = (noteType, noteValue, noteTitle, noteTodos) => {
+
+  NoteService.addNote(noteType,noteValue,noteTitle,noteTodos).then(this.loadNotes)
 }
 
 

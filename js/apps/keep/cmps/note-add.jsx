@@ -1,6 +1,9 @@
-import { NoteService } from "../../keep/services/note.service.js";
+// import { NoteService } from "../../keep/services/note.service.js";
 // import { utilService } from "../../../services/util.service.js";
 // import { noteApp } from "../pages/note-app.jsx"
+
+
+
 export class NoteAdd extends React.Component { 
 
   constructor(props) {
@@ -8,8 +11,11 @@ super(props);
   this.state = {
     note: null,
     value: undefined,
+    title: '',
     placeholder: 'enter your note content', 
-    type: 'note-txt'
+    type: 'note-txt',
+    todos: []
+    
   };
 
   this.handleChange = this.handleChange.bind(this);
@@ -24,17 +30,24 @@ super(props);
  handleSubmit = (event) =>{
    event.preventDefault();
 
-    console.log('A name was submitted: ' + this.state.value);
-    const {value, type} = this.state
-
-    NoteService.addNote(type,value)
 
   }
 
   handleChange(event) {
-    console.log(event.target.value);
-    this.setState({value: event.target.value});
+    const value = event.target.value;
+
+    if(this.state.type !== 'note-todos' || event.target.name === 'title') {
+    this.setState({
+      ...this.state,
+      [event.target.name]: value
+    });
+console.log('title change' + this.state.title);
   }
+  else {
+   this.state.todos[event.target.id] = {txt:value, doneAt:Date.now()};
+  }
+  }
+
 
   handleClick = (ev) => {
     ev.preventDefault()
@@ -60,19 +73,69 @@ super(props);
 
   
 render() {
-  return(
-    <form id="form1" onSubmit={this.handleSubmit}>
-        <div className="bar">
-      <textarea value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder={this.state.placeholder}></textarea>
-      <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
-      <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
-      <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
 
-    </div>
+  switch(this.state.type) {
+    case 'note-txt': 
+    return(
+      <form id="form1" onSubmit={this.handleSubmit}>
+          <div className="bar">
+        <textarea  name="value" value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder={this.state.placeholder}></textarea>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
+  
+      </div>
+  
+        <input onClick={() => this.props.onAddNote(this.state.type, this.state.value)} className="sumbit-btn"  value="Submit" type="submit" form="form1"></input>
+  
+        </form>
+    )
+    case 'note-img': 
+    return(
+      <form id="form1" onSubmit={this.handleSubmit}>
+          <div className="bar">
+            <div>
 
-      <input onClick={() => this.props.onAddNote(this.state.type, this.state.value)} className="sumbit-btn"  value="Submit" type="submit" form="form1"></input>
+        <input name="value" value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder={this.state.placeholder}></input>
+        <input name="title" value={this.state.title} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="image-title"></input>
 
-      </form>
-  )
+            </div>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
+  
+      </div>
+  
+        <input onClick={() => this.props.onAddNote(this.state.type,this.state.value,this.state.title )} className="sumbit-btn"  value="Submit" type="submit" form="form1"></input>
+  
+        </form>
+    )
+
+    case 'note-todos': 
+    return(
+      <form id="form1" onSubmit={this.handleSubmit}>
+          <div className="bar">
+            <div>
+
+        <input name="title" value={this.state.title} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="todos-title"></input>
+        <input name="todos" id="0" value={this.state.todos[0]} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="enter todo"></input>
+        <input name="todos" id="1" value={this.state.todos[1]} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="enter todo"></input>
+        <input name="todos" id="2" value={this.state.todos[2]} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="enter todo"></input>
+        <input name="todos" id="3" value={this.state.todos[3]} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder="enter todo"></input>
+  
+
+            </div>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-txt" /></a>
+        <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-todos" /></a>
+  
+      </div>
+  
+        <input onClick={() => this.props.onAddNote(this.state.type,this.state.value,this.state.title, this.state.todos )} className="sumbit-btn"  value="Submit" type="submit" form="form1"></input>
+  
+        </form>
+    )
+  }
+  
 }
 }

@@ -25,6 +25,7 @@ export class NotePreview extends React.Component {
 
     return (
       <section className="note-preview tile" id="myDivHeader" style={{backgroundColor: note.style.backgroundColor}}>
+
         <NoteDynamic
           note={note}
           onRemoveNote={this.props.onRemoveNote}

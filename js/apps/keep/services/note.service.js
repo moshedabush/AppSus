@@ -78,7 +78,8 @@ function deleteNote(noteId) {
   return Promise.resolve();
 }
 
-function addNote(noteType, noteContent) {
+function addNote(noteType, noteContent, noteTitle, todosList) {
+
 
   if (noteType === 'note-txt') {
     const newNote = {
@@ -103,16 +104,36 @@ function addNote(noteType, noteContent) {
       info: {
         url: noteContent,
 
-        title: 'note image',
+        title: noteTitle,
       },
       style: {
         backgroundColor: '#1911',
       }
     }
     gNotes.unshift(newNote)
-    return Promise.resolve(newNote)
+    return Promise.resolve()
+  }
+  if (noteType === 'note-todos') {
+    const newNote = {
+      id: utilService.makeId(),
+      isPinned: false,
+      type: 'note-todos',
+      style: {
+        backgroundColor: '#7777',
+      },
+      info: {
+        label: noteTitle,
+        todos: todosList
+
+      }
+    }
+    gNotes.unshift(newNote)
+    return Promise.resolve()
+
   }
 }
+
+
 function duplicateNote(noteId) {
   const idx = gNotes.findIndex(note => note.id === noteId)
   const note = gNotes[idx]
