@@ -2,6 +2,8 @@
 // import { utilService } from "../../../services/util.service.js";
 // import { noteApp } from "../pages/note-app.jsx"
 
+import { utilService } from "../../../services/util.service";
+
 
 
 export class NoteAdd extends React.Component { 
@@ -55,7 +57,7 @@ this.setState({...initial})
 console.log('title change' + this.state.title);
   }
   else {
-   this.state.todos[event.target.id] = {txt:value, doneAt:Date.now()};
+   this.state.todos[event.target.id] = {id:utilService.makeId(), txt:value, doneAt:Date.now()};
   }
   }
 

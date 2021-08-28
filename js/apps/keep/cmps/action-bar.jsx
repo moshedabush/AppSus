@@ -1,9 +1,12 @@
+import {ChangColor} from '../cmps/colorComp.jsx'
+
 
 export const ActionBar = ({
   handleColorChange,
   note,
   onDuplicateNote,
   onPinning,
+  onRemoveNote
 }) => {
     const colors = ['#e8eaed', '#e6c9a8', '#fdcfe8', '#ffffff', '#d7aefb', '#aecbfa'
     , '#cbf0f8', '#a7ffeb', '#ccff90', '#fff475', '#fbbc04', '#f28b82']
@@ -21,7 +24,8 @@ export const ActionBar = ({
             }}
             href="#"
           >
-            duplicate
+                 <img src="../../assets/css/img/duplicate.png"></img>
+
           </a>
         </li>
         <li>
@@ -34,11 +38,21 @@ export const ActionBar = ({
             }}
             href="#"
           >
-            pin
+            <img src="../../assets/css/img/pin.png"></img>
           </a>
         </li>
         <li>
         <div className="palette-container">
+        <div>
+                      <a>
+                        
+                        <ChangColor handleColorChange={handleColorChange}/>
+                        </a>
+</div>
+          </div>
+        </li>
+        <li>
+        <div>
 
           <a
             key={note.id}
@@ -48,12 +62,30 @@ export const ActionBar = ({
               handleColorChange('#2222');
               
             }}
-            style={{ backgroundColor: '#5555' }}
             href="#"
           >
-            color
+                    <img src="../../assets/css/img/edit.png"></img>
+
           </a>
-        
+          </div>
+        </li>
+        <li>
+        <div>
+
+          <a
+            key={note.id}
+            onClick={function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+              onRemoveNote(note.id)
+
+              
+            }}
+            href="#"
+          >
+          <img src="../../assets/css/img/trash.png"></img>
+
+          </a>
           </div>
         </li>
       </ul>

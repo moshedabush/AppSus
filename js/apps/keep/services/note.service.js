@@ -11,6 +11,7 @@ export const NoteService = {
   changeColor,
   duplicateNote,
   pinNote,
+  toggleTodo
 };
 
 
@@ -57,8 +58,8 @@ var gNotes = [
     info: {
       label: 'Get my stuff together',
       todos: [
-        { txt: 'Driving liscence', doneAt: 1242211 },
-        { txt: 'Coding power', doneAt: 187111111 },
+        { id: utilService.makeId(), txt: 'Driving liscence', doneAt: 1242211 },
+        { id: utilService.makeId(), txt: 'Coding power', doneAt: 187111111 },
       ],
     },
   },
@@ -163,6 +164,15 @@ function addNote(noteType, noteContent, noteTitle, todosList) {
     return Promise.resolve()
 
   }
+}
+
+
+
+function toggleTodo(noteId, todoId) {
+  const noteIndex = gNotes.findIndex(note => note.id === noteId)
+  const todoIndex = gNotes[noteIndex].info.todos.findIndex(todo => todo.id === todoId);
+  gNotes[noteIndex].info.todos.splice(todoIndex, 1)
+  return Promise.resolve(gNotes[noteIndex])
 }
 
 

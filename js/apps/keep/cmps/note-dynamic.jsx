@@ -1,7 +1,7 @@
 import {NoteTodos} from '../cmps/note-todos.jsx'
 
 
-export const NoteDynamic = ({ note , onRemoveNote}) => {
+export const NoteDynamic = ({ note , onRemoveNote, onDoneTodo}) => {
 
         switch (note.type) {
           case 'note-txt':
@@ -45,7 +45,7 @@ export const NoteDynamic = ({ note , onRemoveNote}) => {
                   src="assets/css/apps/book/img/close.png"
                 />
                 <h2>{note.info.label}</h2>
-                <NoteTodos note={note}/>
+                <NoteTodos onDoneTodo={onDoneTodo} note={note}/>
               </div>
             );
             case 'note-video': 

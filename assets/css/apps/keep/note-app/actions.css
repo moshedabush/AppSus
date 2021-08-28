@@ -11,11 +11,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  background-color: rgba(248, 248, 248, 0.637);
   width: 100%;
-  color: #ffffff;
-  color: rgba(255, 255, 255, 0.8);
-  background: #000000;
-  background: rgba(0, 0, 0, 0.6);
   transition: height 0.5s;
   -webkit-transition: height 0.5s;
   -moz-transition: height 0.5s;
@@ -31,20 +28,17 @@
 .toolbar a {
   display: block;
   text-decoration: none;
-  color: rgba(133, 133, 133, 0.9);
   margin: 0;
   padding: 10px;
 }
 .toolbar i {
   width: 20px;
 }
-.toolbar a:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
 
 .toolbar img {
   width: 20px;
 }
 .toolbar img:hover {
-  background-color: antiquewhite;
+  border-radius: 20%;
+  background-color: rgba(139, 139, 139, 0.384);
 }

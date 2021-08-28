@@ -19,6 +19,14 @@ export class NotePreview extends React.Component {
     this.setState({ note });
   };
 
+
+  onDoneTodo = (todoId) => {
+    NoteService
+      .toggleTodo(this.state.note.id, todoId)
+      .then((noteAfteTodo) => this.setState({ note: noteAfteTodo }));
+  };
+
+
   render() {
     const { note } = this.state;
     if (!note) return <div>Loading...</div>;
@@ -29,12 +37,15 @@ export class NotePreview extends React.Component {
         <NoteDynamic
           note={note}
           onRemoveNote={this.props.onRemoveNote}
+          onDoneTodo={this.onDoneTodo}
         />
         <ActionBar
           note={note}
           handleColorChange={this.handleColorChange}
           onDuplicateNote={this.props.onDuplicateNote}
           onPinning={this.props.onPinning}
+          onRemoveNote={this.props.onRemoveNote}
+
         />
       </section>
     );
