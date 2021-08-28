@@ -40,7 +40,8 @@ export class EmailSearch extends React.Component {
           value={isRead}
           onChange={this.handleChange}
         >
-          <option value="">All</option>
+          <option value=""></option>
+          <option value="all">All</option>
           <option value="read">Read</option>
           <option value="unread">Unread</option>
         </select>

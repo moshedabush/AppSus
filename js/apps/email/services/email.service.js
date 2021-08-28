@@ -55,6 +55,8 @@ function filterBy(criteria) {
         return email.isTrash && filterByText(email, txt);
       case "draft":
         return email.isDraft && filterByText(email, txt);
+      case "all":
+        return email && filterByText(email, txt);
       default:
         return true;
     }

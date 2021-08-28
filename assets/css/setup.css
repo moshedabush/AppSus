@@ -13,3 +13,7 @@ body {
   justify-content: center;
   margin-block-start: 45%;
 }
+
+main{
+  margin-block-start: 10vh;
+}
