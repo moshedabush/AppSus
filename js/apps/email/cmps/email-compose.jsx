@@ -1,5 +1,3 @@
-import { EmailService } from "../services/email.service.js";
-
 export class EmailCompose extends React.Component {
   state = {
     isActive: false,
@@ -11,10 +9,7 @@ export class EmailCompose extends React.Component {
   };
 
   addEmail = (ev) => {
-    console.log('hi');
     ev.preventDefault();
-    console.log(this.state.composeData);
-    
   };
 
   onToggleActive = () => {
@@ -30,17 +25,14 @@ export class EmailCompose extends React.Component {
   };
 
   render() {
-    const {sentEmail} = this.props;
-    const {composeData} = this.state;
+    const { sentEmail } = this.props;
+    const { composeData } = this.state;
     const { to, subject, body } = this.state.composeData;
 
     return (
       <section className="email-add">
         {this.state.isActive && (
-          <form
-            className="email-compose"
-            onSubmit={this.addEmail}
-          >
+          <form className="email-compose" onSubmit={this.addEmail}>
             <div className="compose-input">
               <label htmlFor="to"></label>
               <input
@@ -77,11 +69,22 @@ export class EmailCompose extends React.Component {
               />
             </div>
 
-            <button type="button" onClick={this.addEmail} onClick={()=>{sentEmail(composeData)}}>Send!</button>
+            <button
+              type="button"
+              onClick={this.addEmail}
+              onClick={() => {
+                sentEmail(composeData);
+              }}
+            >
+              Send!
+            </button>
           </form>
         )}
-        <img className="add-email-btn" onClick={this.onToggleActive} src="assets/css/apps/email/img/compose-icon.png"/>
-
+        <img
+          className="add-email-btn"
+          onClick={this.onToggleActive}
+          src="assets/css/apps/email/img/compose-icon.png"
+        />
       </section>
     );
   }

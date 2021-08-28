@@ -54,8 +54,7 @@
   margin-block-end: 1vh;
   height: 3vh;
   border-radius: 1rem;
-  border: 1px solid #cfcece;
-  box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
+  box-shadow: -1px 0px 4px 0px rgba(84, 84, 84, 0.146);
   cursor: pointer;
 }
 
@@ -71,6 +70,14 @@
   box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
     0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
+.email-preview a:link {
+  text-decoration: none;
+  color: rgb(34, 32, 32);
+}
+
+.email-preview a:visited {
+  color: rgb(116, 114, 114);
+}
 
 .email-date {
   margin-block-start: 2.5vh;
@@ -81,7 +88,7 @@
   gap: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px 50px;
+  padding: 20px 30px;
   line-height: 1.5em;
   font-size: 0.6rem;
 }
@@ -98,5 +105,11 @@
 
   .email-navbar .email-add img {
     height: 5vh;
+  }
+  .email-preview {
+    font-size: 0.8rem;
+  }
+  .email-preview-expanded {
+    font-size: 0.9rem;
   }
 }
