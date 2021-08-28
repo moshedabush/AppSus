@@ -1,6 +1,8 @@
 import { ActionBar } from './action-bar.jsx';
 import { NoteDynamic } from './note-dynamic.jsx';
 import { NoteService } from '../services/note.service.js';
+import { Loader } from '../../../cmps/loader.jsx';
+
 
 export class NotePreview extends React.Component {
   state = {
@@ -29,7 +31,7 @@ export class NotePreview extends React.Component {
 
   render() {
     const { note } = this.state;
-    if (!note) return <div>Loading...</div>;
+    if (!note) return   <Loader/>
 
     return (
       <section className="note-preview tile" id="myDivHeader" style={{backgroundColor: note.style.backgroundColor}}>

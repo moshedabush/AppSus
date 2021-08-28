@@ -2,7 +2,7 @@
 // import { utilService } from "../../../services/util.service.js";
 // import { noteApp } from "../pages/note-app.jsx"
 
-import { utilService } from "../../../services/util.service";
+import { utilService } from "../../../services/util.service.js";
 
 
 
@@ -172,6 +172,22 @@ render() {
   
         </form>
     )
+
+ default:  return(
+  <form id="form1" onSubmit={this.handleSubmit}>
+      <div className="bar">
+    <textarea  name="value" value={this.state.value} onChange={this.handleChange} className="searchbar" type="text" title="Search" placeholder='enter your note content'></textarea>
+    <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/imgs.png" alt="note-img" /></a>
+    <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/post-it.png" alt="note-txt" /></a>
+    <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/to-do-list.png" alt="note-todos" /></a>
+    <a onClick={this.handleClick} href="#"><img  src="./assets/css/img/youtube.png" alt="note-video" /></a>
+
+  </div>
+
+    <input onClick={() => this.props.onAddNote(this.state.type, this.state.value)} className="sumbit-btn"  value="Submit" type="submit" form="form1"></input>
+
+    </form>
+ )
   }
   
 }

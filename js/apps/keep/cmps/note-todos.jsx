@@ -4,8 +4,8 @@ export function NoteTodos({ note , onDoneTodo}) {
       {note.info.todos.map((todo) => (
 
         <li  key={todo.doneAt}> 
-       <span onClick={() => {onDoneTodo(todo.id) }}>{todo.txt}</span>
        <input type="checkbox" checked={todo.doneAt ? '' : 'checked'}  onChange={() => {onDoneTodo(todo.id) }} />
+       <span onClick={() => {onDoneTodo(todo.id) }}>{todo.txt}</span>
        
        </li>
  
