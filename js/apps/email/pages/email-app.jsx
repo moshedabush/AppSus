@@ -3,6 +3,8 @@ import { EmailNav } from "../cmps/email-nav.jsx";
 import { EmailList } from "../cmps/emails-list.jsx";
 import { EmailSearch } from "../cmps/email-search.jsx";
 import { Loader } from "../../../cmps/loader.jsx";
+import { EmailCompose } from "../cmps/email-compose.jsx";
+import { emails } from "../services/data.service.js";
 
 export class EmailApp extends React.Component {
   state = {
@@ -34,18 +36,14 @@ export class EmailApp extends React.Component {
   };
 
   setSearch = ({ txt }) => {
-    if(!this.state.status)this.setCriteria('inbox');
+    if (!this.state.status) this.setCriteria("inbox");
     this.setState((prevState) => ({
       criteria: { ...prevState.criteria, txt },
     }));
   };
-  
 
   loadUser = () => {
-    EmailService.getUser().then((user) =>
-      this.setState({ currUser: user }
-      )
-    );
+    EmailService.getUser().then((user) => this.setState({ currUser: user }));
   };
 
   loadEmails = () => {
@@ -54,18 +52,25 @@ export class EmailApp extends React.Component {
       this.setState({ emails });
     });
   };
+  onSentEmail = (val) => {
+    EmailService.addEmail(val,this.state.criteria).then((emails) => {
+      this.setState({ emails});
+    });
+  };
 
   render() {
     const { emails } = this.state;
-    console.log(this.state);
-    if (!emails) return <Loader/>;
+    if (!emails) return <Loader />;
     return (
       <section>
         <EmailSearch setSearch={this.setSearch} />
-      <div className="emails-container">
-        <EmailNav setCriteria={this.setCriteria} />
-        <EmailList emails={emails} />
-      </div>
+        <div className="emails-container">
+          <div className="email-navbar">
+            <EmailCompose sentEmail={this.onSentEmail} />
+          <EmailNav setCriteria={this.setCriteria} />
+          </div>
+          <EmailList emails={emails} />
+        </div>
       </section>
     );
   }

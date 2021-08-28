@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: column;
     background-color: #ffff;
-    z-index: 3;
     width: 30vw;
 }
 
@@ -35,25 +34,26 @@
 .email-navbar img{
     height: 3.5vh;
     margin-inline-start: 1vh;
-    margin-block-end: 2vh;
+    margin-block-end: 1vh;
 }
 .email-navbar a:hover{
     background-color: rgb(244, 112, 112);
 }
 
-.add-email-btn{
+.email-navbar .add-email-btn{
     align-self: center;
 }
 .email-navbar a.add-email-btn:hover{
     background-color: unset;
 }
 
-.add-email-btn img{
-    margin-block-end: 3vh;
+.email-navbar .email-add img{
+    margin-block-end: 1vh;
     height: 5vh;
     border-radius: 1rem;
     border: 1px solid #cfcece;
     box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
+    cursor: pointer;
 }
 
 .email-preview{

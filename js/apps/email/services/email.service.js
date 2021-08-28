@@ -1,6 +1,7 @@
 "use strict";
 
 import { emails } from "../services/data.service.js";
+import { utilService } from "../../../services/util.service.js";
 
 export const EmailService = {
   getUser,
@@ -31,22 +32,23 @@ function createEmail(subject, body, to) {
     sentAt: Date.now(),
     isStarred: false,
     to,
-    status: "sent",
+    isSent:true,
   };
 }
 
-function addEmail(emailData) {
+function addEmail(emailData,criteria) {
   const email = createEmail(emailData.subject, emailData.body, emailData.to);
   gEmails.unshift(email);
-  return Promise.resolve();
+  let emails = emailsToShow(criteria);
+  return Promise.resolve(emails);
 }
 
 function filterBy(criteria) {
   const { txt } = criteria;
   let emails = gEmails.filter((email) => {
     switch (criteria.status) {
-      case "inbox":
-        return email && filterByText(email, txt);
+      case null:
+        return !email.isSent&&!email.isTrash&&!email.isDraft && filterByText(email, txt);
       case "sent":
         return email.isSent && filterByText(email, txt);
       case "trash":
@@ -57,13 +59,11 @@ function filterBy(criteria) {
         return true;
     }
   });
-  console.log(emails);
   emails = emails.filter((email) => {
     return (
       (criteria.isStared && email.isStared) || (!criteria.isStared && email)
     );
   });
-
   return emails;
 }
 

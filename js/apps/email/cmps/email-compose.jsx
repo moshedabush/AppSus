@@ -14,7 +14,7 @@ export class EmailCompose extends React.Component {
     console.log('hi');
     ev.preventDefault();
     console.log(this.state.composeData);
-    EmailService.addEmail(this.state.composeData);
+    
   };
 
   onToggleActive = () => {
@@ -30,6 +30,8 @@ export class EmailCompose extends React.Component {
   };
 
   render() {
+    const {sentEmail} = this.props;
+    const {composeData} = this.state;
     const { to, subject, body } = this.state.composeData;
 
     return (
@@ -75,10 +77,10 @@ export class EmailCompose extends React.Component {
               />
             </div>
 
-            <button type="button">Send!</button>
+            <button type="button" onClick={this.addEmail} onClick={()=>{sentEmail(composeData)}}>Send!</button>
           </form>
         )}
-        <img className="compose-btn" onClick={this.onToggleActive} src="assets/css/apps/email/img/compose-icon.png"/>
+        <img className="add-email-btn" onClick={this.onToggleActive} src="assets/css/apps/email/img/compose-icon.png"/>
       </section>
     );
   }
