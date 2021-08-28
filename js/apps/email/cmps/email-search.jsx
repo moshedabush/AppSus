@@ -26,14 +26,14 @@ export class EmailSearch extends React.Component {
     return (
       <form className="email-search">
         <input
-          type="text"
+          type="search"
           name="txt"
           id="txt"
           value={txt}
-          placeholder="Search Email"
+          placeholder=" Search Email"
           onChange={this.handleChange}
         />
-        <select
+        {/* <select
           className="email-search-isread-btn"
           name="isRead"
           id="isRead"
@@ -44,7 +44,7 @@ export class EmailSearch extends React.Component {
           <option value="all">All</option>
           <option value="read">Read</option>
           <option value="unread">Unread</option>
-        </select>
+        </select> */}
       </form>
     );
   }
