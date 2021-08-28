@@ -4,7 +4,6 @@ import { EmailList } from "../cmps/emails-list.jsx";
 import { EmailSearch } from "../cmps/email-search.jsx";
 import { Loader } from "../../../cmps/loader.jsx";
 import { EmailCompose } from "../cmps/email-compose.jsx";
-import { emails } from "../services/data.service.js";
 
 export class EmailApp extends React.Component {
   state = {
@@ -35,8 +34,8 @@ export class EmailApp extends React.Component {
     }));
   };
 
-  setSearch = ({ txt }) => {
-    if (!this.state.status) this.setCriteria("inbox");
+  setSearch = ({ txt,isRead }) => {
+    if(isRead==="all") this.setCriteria('all');
     this.setState((prevState) => ({
       criteria: { ...prevState.criteria, txt },
     }));

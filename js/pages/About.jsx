@@ -12,7 +12,7 @@ function Team() {
 function Vision() {
   return (
     <ul>
-      <li>Become full stack web developers</li>
+      <li>Becoming professional full stack web developers</li>
       <li>Eat,Code,Desgin,Sleep,Reapet();)</li>
     </ul>
   )

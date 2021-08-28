@@ -1,36 +1,53 @@
 .emails-container {
   display: flex;
+  /* margin-block-start: 5vh; */
 }
 
 .email-search {
   display: flex;
+  position: fixed;
+  top: 2.8%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
 .email-search input {
-  margin-inline-start: 0.5vw;
-  width: 90vw;
+  /* margin-inline-start: 0.5vw;
+  width: 90vw; */
+  /* margin-inline-start: 31vw; */
+  height: 5vh;
+  width: 40vw;
+  margin-block-start: 2vh;
 }
 
 .email-search .email-search-isread-btn {
-  margin-inline-start: 0.5vw;
+  /* margin-inline-start: 0.5vw;
   width: 9vw;
+  margin-inline-end: 0.5vw; */
+  margin-inline-start: 0.5vh;
+  width: 9vw;
+  height: 5vh;
   margin-inline-end: 0.5vw;
+  margin-block-start: 2vh;
 }
 
 .email-navbar {
   z-index: 2;
-  margin-block-start: 3vh;
+  margin-block-start: 0.1vh;
   display: flex;
   flex-direction: column;
   background-color: #ffff;
   width: 30vw;
-  height: 88vh;
+  height: 89vh;
   box-shadow: 6px 2px 11px -6px rgba(0, 0, 0, 0.096);
 }
+/* .email-add{
+margin-block-start: 8vh;
+} */
 
 .email-list {
   background-color: rgb(245, 245, 245);
-  margin-block-start: 3vh;
   width: 70vw;
 }
 
@@ -52,10 +69,8 @@
 
 .email-navbar .email-add img {
   margin-block-end: 1vh;
-  height: 3vh;
   border-radius: 1rem;
-  border: 1px solid #cfcece;
-  box-shadow: -1px 0px 4px 0px rgb(84, 84, 84);
+  box-shadow: rgb(84 84 84 / 14%) 0px 6px 10px 0px;
   cursor: pointer;
 }
 
@@ -71,6 +86,14 @@
   box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
     0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
+.email-preview a:link {
+  text-decoration: none;
+  color: rgb(34, 32, 32);
+}
+
+.email-preview a:visited {
+  color: rgb(116, 114, 114);
+}
 
 .email-date {
   margin-block-start: 2.5vh;
@@ -81,7 +104,7 @@
   gap: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px 50px;
+  padding: 20px 30px;
   line-height: 1.5em;
   font-size: 0.6rem;
 }
@@ -99,4 +122,23 @@
   .email-navbar .email-add img {
     height: 5vh;
   }
+  .email-preview {
+    font-size: 0.8rem;
+  }
+  .email-preview-expanded {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 60em) {
+  .email-search {
+    left: 41%;
+  }
+  .email-search input {
+    width: 25vw;
+  }
+  .email-search .email-search-isread-btn {
+    width: 6vw;
+  }
+
 }
