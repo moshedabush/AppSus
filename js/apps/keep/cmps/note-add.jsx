@@ -39,12 +39,7 @@ super(props);
     todos: []
   };
 
-  this.setState({
-    value: '',
-    title: '', 
-    note:null,
-    todos:[]
-})
+this.setState({...initial})
 
 
   }
