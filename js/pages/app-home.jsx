@@ -14,7 +14,9 @@ export function AppHome() {
       <section className="content">
         <div className="main-content">
         <h1>AppSus</h1>
+        <div className="homepage-subtitle">
         <h4>all the services you need in one place, manage your books notes and emails easely with AppSus</h4>
+        </div>
         <a href="#about" className="button-three">Tell me more</a>
         </div>
       </section>
