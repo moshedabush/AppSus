@@ -32,8 +32,10 @@ export class EmailCompose extends React.Component {
     return (
       <section className="email-add">
         {this.state.isActive && (
-          <form className="email-compose" onSubmit={this.addEmail}>
-            <div className="compose-input">
+          <div className="login-box">
+            <h2>New messege</h2>
+          <form  onSubmit={this.addEmail}>
+            <div className="user-box">
               <label htmlFor="to"></label>
               <input
                 required
@@ -43,9 +45,10 @@ export class EmailCompose extends React.Component {
                 value={to}
                 onChange={this.handleChange}
                 placeholder="To:"
-              />
+              /> 
+              <label>To adress</label>
             </div>
-            <div className="compose-input">
+            <div className="user-box">
               <label htmlFor="subject"></label>
               <input
                 required
@@ -56,35 +59,44 @@ export class EmailCompose extends React.Component {
                 onChange={this.handleChange}
                 placeholder="Subject:"
               />
+                            <label>Subject</label>
+
             </div>
+            <h2 className="text-area">messege:</h2>
             <div className="compose-input">
               <label htmlFor="body"></label>
               <textarea
                 required
+                rows="20" cols="20"
                 type="text"
                 name="body"
                 id="body"
                 value={body}
                 onChange={this.handleChange}
               />
+
             </div>
 
-            <button
+            <a
               type="button"
               onClick={this.addEmail}
               onClick={() => {
                 sentEmail(composeData);
               }}
             >
+                    <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
               Send!
-            </button>
+            </a>
           </form>
+          </div>
         )}
-        <img
-          className="add-email-btn"
-          onClick={this.onToggleActive}
-          src="assets/css/apps/email/img/compose-icon.png"
-        />
+ <a   onClick={this.onToggleActive}
+ data-toggle="modal" title="Compose" className="btn btn-compose add-email-btn">
+Compose
+</a>
       </section>
     );
   }

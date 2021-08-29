@@ -170,3 +170,7 @@ h4 {
   font-size: 24px;
   margin: 0 0 0 100px;
 }
+
+#particles-js {
+  height: 100%;
+}

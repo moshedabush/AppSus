@@ -9,6 +9,8 @@ export function AppHome() {
   <div id="box">
 
     <div id="home">
+    <div id="particles-js"></div>
+
       <section className="content">
         <div className="main-content">
         <h1>AppSus</h1>
