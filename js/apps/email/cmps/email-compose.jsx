@@ -81,14 +81,10 @@ export class EmailCompose extends React.Component {
               type="button"
               onClick={this.addEmail}
               onClick={() => {
+                this.onToggleActive();
                 sentEmail(composeData);
               }}
-            >
-                    <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-              Send!
+            >Send!
             </a>
           </form>
           </div>
