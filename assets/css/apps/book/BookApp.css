@@ -7,6 +7,10 @@
   background-color: #ffff;
 }
 
+.book-app{
+margin-block-start: 10vh;
+}
+
 .book-preview {
   height: 60vh;
   width: 44vw;

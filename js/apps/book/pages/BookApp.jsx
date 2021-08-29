@@ -31,7 +31,7 @@ export class BookApp extends React.Component {
         const { books, selectedBook } = this.state;
         if(!books) return <Loader/>;
         return (
-            <section>
+            <section className="book-app">
                 <BookFilter onSetFilter={this.onSetFilter} />
                 <BookList books={books} onSelectBook={this.onSelectBook}/>
             </section>

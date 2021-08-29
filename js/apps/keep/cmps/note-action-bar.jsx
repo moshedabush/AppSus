@@ -35,7 +35,7 @@ export const ActionBar = ({
             }}
             href="#"
           >
-            <img src="../../assets/css/img/duplicate.png"></img>
+            <img src="assets/css/img/duplicate.png"></img>
           </a>
         </li>
         <li>
@@ -48,7 +48,7 @@ export const ActionBar = ({
             }}
             href="#"
           >
-            <img src="../../assets/css/img/pin.png"></img>
+            <img src="assets/css/img/pin.png"></img>
           </a>
         </li>
         <li>
@@ -71,7 +71,7 @@ export const ActionBar = ({
               }}
               href="#"
             >
-              <img src="../../assets/css/img/edit.png"></img>
+              <img src="assets/css/img/edit.png"></img>
             </a>
           </div>
         </li>
@@ -86,7 +86,7 @@ export const ActionBar = ({
               }}
               href="#"
             >
-              <img src="../../assets/css/img/trash.png"></img>
+              <img src="assets/css/img/trash.png"></img>
             </a>
           </div>
         </li>
